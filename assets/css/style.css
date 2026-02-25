@@ -3,8 +3,87 @@ body {
     margin: 0;
 }
 
+<<<<<<< HEAD
 :root {
     line-height: 1.5;
+=======
+/* HEADER */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav {
+    background: var(--brun);
+    height: 80px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+}
+
+.logoHeader {
+    max-width: 100%;
+    height: 4rem;
+}
+
+nav ul {
+    justify-items: center;
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+    color: var(--gul);
+    align-items: center;
+}
+
+.burgerMenu {
+    display: none;
+}
+
+.burgerMenuToggle {
+    display: none;
+}
+
+.burgerMenuLabel {
+    cursor: pointer;
+    color: var(--gul);
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#burgerMenuIcon,
+.searchIcon {
+    height: 2rem;
+}
+
+/* Dropdown menu */
+.nav-list {
+    list-style: none;
+    background: var(--brun);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--gul);
+    line-height: 1.5;
+}
+
+
+/* FOOTER */
+>>>>>>> e7d092d539f2d06591faa3f7eeb5d807f2a002f6
 
     /* VARIABLER */
     /* farver */
