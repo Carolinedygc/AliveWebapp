@@ -3,10 +3,8 @@ body {
     margin: 0;
 }
 
-<<<<<<< HEAD
 :root {
     line-height: 1.5;
-=======
 /* HEADER */
 ul {
     list-style: none;
@@ -83,8 +81,6 @@ li a {
 
 
 /* FOOTER */
->>>>>>> e7d092d539f2d06591faa3f7eeb5d807f2a002f6
-
     /* VARIABLER */
     /* farver */
     --brun: #422d27;
