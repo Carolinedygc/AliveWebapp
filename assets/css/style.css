@@ -5,6 +5,20 @@ body {
 
 :root {
     line-height: 1.5;
+
+    /* FOOTER */
+    /* VARIABLER */
+    /* farver */
+    --brun: #422d27;
+    --pink: #ffb3e8;
+    --mosgrøn: #5c5718;
+    --mørkegrøn: #2e4428;
+    --alivegrøn: #d7ffc2;
+    --gul: #ffffdf;
+
+    /* font */
+}
+
 /* HEADER */
 ul {
     list-style: none;
@@ -78,27 +92,6 @@ li a {
     color: var(--gul);
     line-height: 1.5;
 }
-
-
-/* FOOTER */
-    /* VARIABLER */
-    /* farver */
-    --brun: #422d27;
-    --pink: #ffb3e8;
-    --mosgrøn: #5c5718;
-    --mørkegrøn: #2e4428;
-    --alivegrøn: #d7ffc2;
-    --gul: #ffffdf;
-
-    /* font */
-}
-
-
-
-
-
-
-/* HEADER */
 
 /* FOOTER */
 footer {
