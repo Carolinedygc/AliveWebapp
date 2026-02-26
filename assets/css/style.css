@@ -5,82 +5,83 @@ body {
 
 :root {
     line-height: 1.5;
-/* HEADER */
-ul {
-    list-style: none;
-    padding: 0;
-}
 
-li {
-    display: inline-block;
-    margin-right: 20px;
-}
+    /* HEADER */
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 
-nav {
-    background: var(--brun);
-    height: 80px;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    position: sticky;
-    top: 0;
-}
+    li {
+        display: inline-block;
+        margin-right: 20px;
+    }
 
-.logoHeader {
-    max-width: 100%;
-    height: 4rem;
-}
+    nav {
+        background: var(--brun);
+        height: 80px;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        position: sticky;
+        top: 0;
+    }
 
-nav ul {
-    justify-items: center;
-    justify-content: space-around;
-    display: flex;
-    width: 100%;
-    color: var(--gul);
-    align-items: center;
-}
+    .logoHeader {
+        max-width: 100%;
+        height: 4rem;
+    }
 
-.burgerMenu {
-    display: none;
-}
+    nav ul {
+        justify-items: center;
+        justify-content: space-around;
+        display: flex;
+        width: 100%;
+        color: var(--gul);
+        align-items: center;
+    }
 
-.burgerMenuToggle {
-    display: none;
-}
+    .burgerMenu {
+        display: none;
+    }
 
-.burgerMenuLabel {
-    cursor: pointer;
-    color: var(--gul);
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
+    .burgerMenuToggle {
+        display: none;
+    }
 
-#burgerMenuIcon,
-.searchIcon {
-    height: 2rem;
-}
+    .burgerMenuLabel {
+        cursor: pointer;
+        color: var(--gul);
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
 
-/* Dropdown menu */
-.nav-list {
-    list-style: none;
-    background: var(--brun);
-    display: flex;
-    flex-direction: column;
-}
+    #burgerMenuIcon,
+    .searchIcon {
+        height: 2rem;
+    }
 
-.nav-list li {
-    position: relative;
-}
+    /* Dropdown menu */
+    .nav-list {
+        list-style: none;
+        background: var(--brun);
+        display: flex;
+        flex-direction: column;
+    }
 
-li a {
-    text-decoration: none;
-    color: var(--gul);
-    line-height: 1.5;
-}
+    .nav-list li {
+        position: relative;
+    }
+
+    li a {
+        text-decoration: none;
+        color: var(--gul);
+        line-height: 1.5;
+    }
 
 
-/* FOOTER */
+    /* FOOTER */
     /* VARIABLER */
     /* farver */
     --brun: #422d27;
@@ -153,6 +154,10 @@ footer {
 
 /* FORSIDE */
 
+
+
+
+
 /* PROGRAMMER */
 
 /* MUSIK PROGRAM  */
@@ -160,7 +165,6 @@ footer {
 /* MUSIK PROGRAM TORSDAG*/
 /* MUSIK PROGRAM  FREDAG*/
 /* MUSIK PROGRAM  LØRDAG*/
-
 
 
 
