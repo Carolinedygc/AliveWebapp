@@ -4,6 +4,18 @@ body {
 }
 
 :root {
+    /* FOOTER */
+    /* VARIABLER */
+    /* farver */
+    --brun: #422d27;
+    --pink: #ffb3e8;
+    --mosgrøn: #5c5718;
+    --mørkegrøn: #2e4428;
+    --alivegrøn: #d7ffc2;
+    --gul: #ffffdf;
+
+    /* font */
+
     line-height: 1.5;
 
     /* HEADER */
@@ -79,19 +91,6 @@ body {
         color: var(--gul);
         line-height: 1.5;
     }
-
-
-    /* FOOTER */
-    /* VARIABLER */
-    /* farver */
-    --brun: #422d27;
-    --pink: #ffb3e8;
-    --mosgrøn: #5c5718;
-    --mørkegrøn: #2e4428;
-    --alivegrøn: #d7ffc2;
-    --gul: #ffffdf;
-
-    /* font */
 }
 
 
