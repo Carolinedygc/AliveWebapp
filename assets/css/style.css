@@ -17,8 +17,10 @@ body {
     /* font */
 
     line-height: 1.5;
+}
 
-    /* HEADER */
+/* HEADER */
+header {
     ul {
         list-style: none;
         padding: 0;
@@ -93,25 +95,23 @@ body {
     }
 }
 
-
-
-
-
-
-/* HEADER */
-
 /* FOOTER */
 footer {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
     height: 100px;
     background-color: var(--brun);
     position: sticky;
+    padding-bottom: 2rem;
     bottom: 0;
 
     a {
         text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
 
     .footerLink {
@@ -134,20 +134,20 @@ footer {
         }
 
         .hjem {
-            padding-top: 1rem;
+            padding-top: 2rem;
         }
 
+    }
 
+    img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        position: relative;
+        object-position: top;
+        margin-top: -170px;
+        z-index: 10;
 
-        img {
-            width: 100px;
-            height: 90px;
-            object-fit: cover;
-            position: relative;
-            margin-top: -60px;
-            z-index: 10;
-
-        }
     }
 }
 
@@ -158,17 +158,56 @@ footer {
 
 
 /* PROGRAMMER */
+nav.programDropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
 
-/* MUSIK PROGRAM  */
+    a,
+    span {
+        text-decoration: none;
+        color: var(--gul);
+    }
 
-/* MUSIK PROGRAM TORSDAG*/
-/* MUSIK PROGRAM  FREDAG*/
-/* MUSIK PROGRAM  LØRDAG*/
+}
+
+nav.programDage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    background-color: var(--brun);
+
+    a {
+        text-decoration: none;
+        color: var(--gul);
+    }
+}
+
+nav.programDage,
+nav.programDropdown {
+    height: 50px;
+    align-items: center;
+}
 
 
+div.program {
+    height: 150px;
+    background-color: var(--pink);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 2rem;
+    border: 2px solid var(--brun);
 
-/* KUNST PROGRAM  */
 
-/* UDFLUGT PROGRAM  */
+    h2,
+    p {
+        margin: 0;
+    }
 
-/* ANDET PROGRAM */
+    h2 {
+        padding-bottom: 6px;
+        font-size: 36px;
+    }
+}

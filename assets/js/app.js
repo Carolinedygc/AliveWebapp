@@ -12,149 +12,330 @@ getBurgerMenu.addEventListener('click', toggleMenu);
 
 // musik program 
 
-let musikProgramTorsdag = [
+const kunstnere = [
+    // torsdag
     {
-        kunstner: "ORA",
-        lokation: "Kirken",
-        tidspunkt: "15:30",
-        dag: "torsdag"
+        navn: "ORA",
+        scene: "Kirken",
+        tid: "15:30",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunster: "Uden ord",
-        lokation: "Skovscenen",
-        tidspunkt: "16:00",
-        dag: "torsdag"
+        navn: "Uden ord",
+        scene: "Skovscenen",
+        tid: "16:00",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Fællessang",
-        lokation: "scenen",
-        tidspunkt: "17:00",
-        dag: "torsdag"
+        navn: "Fællessang",
+        scene: "Havescenen",
+        tid: "17:00",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Elias Rønnenfeldt",
-        lokation: "scenen",
-        tidspunkt: "17:05",
-        dag: "torsdag"
+        navn: "Elias Rønnenfeldt",
+        scene: "Skovscenen",
+        tid: "17:05",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Enes",
-        lokation: "scenen",
-        tidspunkt: "18:45",
-        dag: "torsdag"
+        navn: "Enes",
+        scene: "Havescenen",
+        tid: "18:45",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Brimheim",
-        lokation: "scenen",
-        tidspunkt: "20:15",
-        dag: "torsdag"
+        navn: "Brimheim",
+        scene: "Skovscenen",
+        tid: "21:15",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Faza",
-        lokation: "scenen",
-        tidspunkt: "21:45",
-        dag: "torsdag"
+        navn: "Faza",
+        scene: "Havescenen",
+        tid: "21:45",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Emma Sehested Høeg",
-        lokation: "scenen",
-        tidspunkt: "23:00",
-        dag: "torsdag"
-    }
-]
+        navn: "Emma Sehested Høeg",
+        scene: "Skovscenen",
+        tid: "23:00",
+        dag: "torsdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
+    },
 
-let musikProgramLørdag = [
+    //   fredag
     {
-        kunstner: "Karoline Funder",
-        lokation: "Kirken",
-        tidspunkt: "15:30",
-        dag: "fredag"
+        navn: "Karoline Funder",
+        scene: "Kirken",
+        tid: "15:30",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunster: "Bette",
-        lokation: "Skovscenen",
-        tidspunkt: "17:45",
-        dag: "fredag"
+        navn: "Bette",
+        scene: "Skovscenen",
+        tid: "17:15",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Østen",
-        lokation: "scenen",
-        tidspunkt: "18:45",
-        dag: "fredag"
+        navn: "Østen",
+        scene: "Havescenen",
+        tid: "18:45",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Baest",
-        lokation: "scenen",
-        tidspunkt: "20:05",
-        dag: "fredag"
+        navn: "Baest",
+        scene: "Skovscenen",
+        tid: "20:15",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Dayyani",
-        lokation: "scenen",
-        tidspunkt: "21:45",
-        dag: "fredag"
+        navn: "Dayyani",
+        scene: "Havescenen",
+        tid: "21:45",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "School of X",
-        lokation: "scenen",
-        tidspunkt: "23:15",
-        dag: "fredag"
+        navn: "School of X",
+        scene: "Skovscenen",
+        tid: "23:15",
+        dag: "fredag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Paydar",
-        lokation: "scenen",
-        tidspunkt: "01:00",
-        dag: "fredag"
-    }
-]
+        navn: "Paydar",
+        scene: "Havescenen",
+        tid: "01:00",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
+    },
 
-let musikProgramLoerdag = [
+    // Lørdag
     {
-        kunstner: "ORA",
-        lokation: "Kirken",
-        tidspunkt: "15:30",
-        dag: "Lørdag"
+        navn: "Lea Kampmann",
+        scene: "kirken",
+        tid: "15:30",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunster: "Uden ord",
-        lokation: "Skovscenen",
-        tidspunkt: "16:00",
-        dag: "Lørdag"
+        navn: "Tamara Mneney",
+        scene: "Skovscenen",
+        tid: "16:00",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Fællessang",
-        lokation: "scenen",
-        tidspunkt: "17:00",
-        dag: "Lørdag"
+        navn: "Mekdes",
+        scene: "Havescenen",
+        tid: "17:30",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Elias Rønnenfeldt",
-        lokation: "scenen",
-        tidspunkt: "17:05",
-        dag: "Lørdag"
+        navn: "Von Quar",
+        scene: "Skovscenen",
+        tid: "19:15",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Enes",
-        lokation: "scenen",
-        tidspunkt: "18:45",
-        dag: "Lørdag"
+        navn: "Def Mama Def",
+        scene: "Havescenen",
+        tid: "20:45",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Brimheim",
-        lokation: "scenen",
-        tidspunkt: "20:15",
-        dag: "Lørdag"
+        navn: "100% WET",
+        scene: "Skovscenen",
+        tid: "22:15",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Faza",
-        lokation: "scenen",
-        tidspunkt: "21:45",
-        dag: "Lørdag"
+        navn: "Kind mod kind",
+        scene: "Havescenen",
+        tid: "23:30",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
     },
     {
-        kunstner: "Emma Sehested Høeg",
-        lokation: "scenen",
-        tidspunkt: "23:00",
-        dag: "Lørdag"
-    }
+        navn: "Tacobitch",
+        scene: "Skovscenen",
+        tid: "00:01",
+        dag: "lørdag",
+        kategori: "musik",
+        billede: "",
+        favorit: false
+    },
+
+    //   Kunst
+    {
+        navn: "Bjørg Dyg Nielsen",
+        scene: "",
+        tid: "Hele dagen",
+        dag: "fredag",
+        kategori: "kunst",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Traad for traad",
+        scene: "",
+        tid: "21:Hele dagen",
+        dag: "fredag",
+        kategori: "kunst",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Werk",
+        scene: "",
+        tid: "16:00",
+        dag: "fredag",
+        kategori: "kusnt",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Solvej Mia",
+        scene: "",
+        tid: "Hele dagen",
+        dag: "fredag",
+        kategori: "kunst",
+        billede: "",
+        favorit: false
+    },
+
+    // udflugter
+    {
+        navn: "Thisted Bryghus",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Morgendyb i Limfjorden",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Thy whiskey på Gyrup gård",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "'Kærestebreve fra thy' i Agger bio",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Surfskole",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Det nordatlantiske fyr i Hanstholm",
+        scene: "Hovedscenen",
+        tid: "21:00",
+        dag: "fredag",
+        kategori: "udflugter",
+        billede: "",
+        favorit: false
+    },
+    //   Andet
+    {
+        navn: "sex & samfund",
+        scene: "Campingpladsen",
+        tid: "13:30",
+        dag: "fredag",
+        kategori: "andet",
+        billede: "",
+        favorit: false
+    },
+    {
+        navn: "Silent disco",
+        scene: "silent disco",
+        tid: "00:00",
+        dag: "fredag",
+        kategori: "andet",
+        billede: "",
+        favorit: false
+    },
 ]
