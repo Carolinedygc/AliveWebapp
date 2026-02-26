@@ -1,3 +1,5 @@
+
+// Dropdown menu
 function toggleMenu() {
     let getMenu = document.querySelector('#navDropdown');
     let getIcon = document.querySelector('#burgerMenuIcon');
@@ -373,3 +375,31 @@ const kunstnere = [
         favorit: false
     },
 ]
+
+
+// fang .programmer i HTML
+const programEl = document.querySelector('.programmer');
+// Tøm containeren
+
+
+if (programEl) {
+    programEl.innerHTML = '';
+    // Løb igennem hvert kunstner-objekt i arrayet
+    kunstnere.forEach(kunstner => {
+        // Lav en ny div
+        const card = document.createElement('div');
+        // Giv div'en klassen "program"
+        card.classList.add('program');
+
+        // Put navn, scene, tid og hjerte-ikon ind i div'en
+        card.innerHTML = `
+      <h2>${kunstner.navn}</h2>
+      <p>${kunstner.scene}</p>
+      <p>${kunstner.tid}</p>
+      <i class="fa-regular fa-heart"></i>
+    `;
+
+        // Tilføj div'en til containeren
+        programEl.appendChild(card);
+    });
+}
