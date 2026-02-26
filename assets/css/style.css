@@ -175,7 +175,6 @@ nav.programDage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
-    background-color: var(--brun);
 
     a {
         text-decoration: none;
@@ -187,6 +186,7 @@ nav.programDage,
 nav.programDropdown {
     height: 50px;
     align-items: center;
+    background-color: var(--brun);
 }
 
 
@@ -197,8 +197,9 @@ div.program {
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
     border: 2px solid var(--brun);
+    color: var(--brun);
 
 
     h2,
@@ -207,7 +208,12 @@ div.program {
     }
 
     h2 {
-        padding-bottom: 6px;
         font-size: 36px;
+    }
+
+    i {
+        display: flex;
+        align-self: flex-end;
+        font-size: 2rem;
     }
 }
