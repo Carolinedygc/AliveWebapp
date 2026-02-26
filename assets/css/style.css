@@ -55,17 +55,10 @@ header {
         align-items: center;
     }
 
-    .burgerMenu {
-        display: none;
-    }
-
-    .burgerMenuToggle {
-        display: none;
-    }
-
     .burgerMenuLabel {
         cursor: pointer;
         color: var(--gul);
+        display: flex;
         align-items: center;
         padding: 0;
         margin: 0;
@@ -74,24 +67,54 @@ header {
     #burgerMenuIcon,
     .searchIcon {
         height: 2rem;
+        cursor: pointer;
     }
 
     /* Dropdown menu */
+    #navDropdown {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--brun);
+        z-index: 1000;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    }
+
+    #navDropdown.show {
+        max-height: 400px;
+        /* Rigeligt til 6 links */
+        opacity: 1;
+        visibility: visible;
+    }
+
     .nav-list {
         list-style: none;
-        background: var(--brun);
         display: flex;
         flex-direction: column;
+        padding: 0;
+        margin: 0;
     }
 
     .nav-list li {
         position: relative;
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 0, 0.1);
+        display: block;
     }
 
-    li a {
+    .nav-list li a {
         text-decoration: none;
         color: var(--gul);
         line-height: 1.5;
+        font-size: 1.2rem;
+        display: block;
     }
 }
 
