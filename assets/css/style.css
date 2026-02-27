@@ -19,7 +19,20 @@ body {
     line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--brun);
+}
+
 /* HEADER */
+.aktiv {
+    opacity: 0.5;
+}
+
 header {
     ul {
         list-style: none;
@@ -37,22 +50,25 @@ header {
         display: flex;
         width: 100%;
         flex-direction: row;
-        position: sticky;
+        position: fixed;
+        justify-content: center;
         top: 0;
     }
 
     .logoHeader {
         max-width: 100%;
         height: 4rem;
+        justify-items: center;
     }
 
     nav ul {
         justify-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         display: flex;
         width: 100%;
         color: var(--gul);
         align-items: center;
+        padding: 0 50px 0 50px;
     }
 
     .burgerMenuLabel {
@@ -72,7 +88,7 @@ header {
 
     /* Dropdown menu */
     #navDropdown {
-        position: absolute;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
@@ -174,11 +190,6 @@ footer {
     }
 }
 
-/* FORSIDE */
-
-
-
-
 
 /* PROGRAMMER */
 nav.programDropdown {
@@ -239,4 +250,64 @@ div.program {
         align-self: flex-end;
         font-size: 2rem;
     }
+}
+
+/* FRIVILLIG */
+.blivFrivilligheader {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 0;
+}
+
+.intro-frivilligSide {
+    padding: 2rem;
+    margin: 0;
+}
+
+.emailFrivillig {
+    text-decoration: none;
+    color: var(--brun);
+}
+
+/* Frivillig - Cards */
+.cards-frivillig {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    width: min(100%, 336px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    height: 600px;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h2,
+.card p {
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Knap - se frivillighåndbog */
+
+.btn-frivillig {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 50px auto 120px auto;
+    background: var(--pink);
 }
