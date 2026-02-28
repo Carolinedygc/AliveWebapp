@@ -3,22 +3,436 @@ body {
     margin: 0;
 }
 
+:root {
+    /* FOOTER */
+    /* VARIABLER */
+    /* farver */
+    --brun: #422d27;
+    --pink: #ffb3e8;
+    --mosgrøn: #5c5718;
+    --mørkegrøn: #2e4428;
+    --alivegrøn: #d7ffc2;
+    --gul: #ffffdf;
+
+    /* font */
+
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--brun);
+}
+
+/* HEADER */
+.aktiv {
+    opacity: 0.5;
+}
+
+header {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    nav {
+        background: var(--brun);
+        height: 80px;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        position: fixed;
+        justify-content: center;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logoHeader {
+        max-width: 100%;
+        height: 4rem;
+        justify-items: center;
+    }
+
+    nav ul {
+        justify-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        width: 100%;
+        color: var(--gul);
+        align-items: center;
+    }
+
+    .burgerMenuLabel {
+        cursor: pointer;
+        color: var(--gul);
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    #burgerMenuIcon,
+    .searchIcon {
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    /* Dropdown menu */
+    #navDropdown {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--brun);
+        z-index: 1000;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    }
+
+    #navDropdown.show {
+        max-height: 400px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-list li {
+        position: relative;
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 0, 0.1);
+        display: block;
+    }
+
+    .nav-list li a {
+        text-decoration: none;
+        color: var(--gul);
+        line-height: 1.5;
+        font-size: 1.2rem;
+        display: block;
+    }
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 100px;
+    background-color: var(--brun);
+    position: sticky;
+    padding-bottom: 2rem;
+    bottom: 0;
+
+    a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .footerLink {
+        color: var(--gul);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75px;
+
+
+        p {
+            font-size: 14px;
+            margin: 0;
+            text-align: center;
+        }
+
+        i {
+            font-size: 28px;
+            padding-bottom: 1rem;
+        }
+
+        .hjem {
+            padding-top: 2rem;
+        }
+
+    }
+
+    img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        position: relative;
+        object-position: top;
+        margin-top: -170px;
+        z-index: 10;
+
+    }
+}
 
 /* FORSIDE */
+.headingEl-Forside {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.dato-forside {
+    padding: 0 2rem 2rem 2rem;
+    margin: 0;
+    text-align: center;
+    color: var(--brun);
+
+}
+
+.hero-forside {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/Forside_billede.webp);
+    background-size: cover;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+}
+
+.intro-forside {
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+    line-height: 1.5;
+    color: var(--gul);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    height: 250px;
+    display: grid;
+}
+
+
+/* FOCUSED ENTRY POINTS */
+.fep-forside {
+    display: flex;
+    flex-direction: column;
+}
+
+.focus-forside {
+    position: relative;
+    padding: 2rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.focus-forside img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 1;
+    display: block;
+    opacity: 0.7;
+}
+
+.focus-forside h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--brun);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+
+/* NYHEDER - FORSIDE */
+.news-heading-forside {
+    justify-content: center;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.cards-nyheder-forside {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nyhed-forside {
+    width: min(100%, 336px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    height: 600px;
+}
+
+
+.nyhed-forside img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.nyhed-forside p {
+    margin: 0;
+    padding: 1rem;
+}
+
+.nyhed-forside h2 {
+    padding: 0 1rem 0 1rem;
+    margin: 0;
+}
+
+/* Knap til flere nyheder */
+.btn-nyheder-forside {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 50px auto 120px auto;
+    background: var(--pink);
+}
 
 /* PROGRAMMER */
+nav.programDropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    margin-top: 80px;
 
-/* MUSIK PROGRAM  */
+    a,
+    span {
+        text-decoration: none;
+        color: var(--gul);
+    }
 
-/* MUSIK PROGRAM TORSDAG*/
-/* MUSIK PROGRAM  FREDAG*/
-/* MUSIK PROGRAM  LØRDAG*/
+}
+
+nav.programDage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: var(--gul);
+    }
+}
+
+nav.programDage,
+nav.programDropdown {
+    height: 50px;
+    align-items: center;
+    background-color: var(--brun);
+}
 
 
+div.program {
+    height: 150px;
+    background-color: var(--pink);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid var(--brun);
+    color: var(--brun);
 
 
-/* KUNST PROGRAM  */
+    h2,
+    p {
+        margin: 0;
+    }
 
-/* UDFLUGT PROGRAM  */
+    h2 {
+        font-size: 36px;
+    }
 
-/* ANDET PROGRAM */
+    i {
+        display: flex;
+        align-self: flex-end;
+        font-size: 2rem;
+    }
+}
+
+/* FRIVILLIG */
+.blivFrivilligheader {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 0;
+}
+
+.intro-frivilligSide {
+    padding: 2rem;
+    margin: 0;
+}
+
+.emailFrivillig {
+    text-decoration: none;
+    color: var(--brun);
+}
+
+/* Frivillig - Cards */
+.cards-frivillig {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    width: min(100%, 336px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    height: 600px;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h2,
+.card p {
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Knap - se frivillighåndbog */
+
+.btn-frivillig {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 50px auto 120px auto;
+    background: var(--pink);
+}

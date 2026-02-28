@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alive Festival ┃ Billetter </title>
+    <title>Alive Festival ┃ Program </title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="./assets/js/app.js" defer></script>
@@ -19,9 +19,9 @@
                 </div>
                 <div class="nav-dropdown" id="navDropdown">
                     <ul class="nav-list">
-                        <li class="links"><a href="./program.html">Program</a></li>
+                        <li class="links"><a href="./program.html" class="aktiv">Program</a></li>
                         <li class="links"><a href="./nyheder.html">Nyheder</a></li>
-                        <li class="links"><a href="./biletter.html" class="aktiv">Billetter</a></li>
+                        <li class="links"><a href="./biletter.html">Billetter</a></li>
                         <li class="links"><a href="./frivillig.html">Bliv Frivillig</a></li>
                         <li class="links"><a href="./madOgDrikke.html">Mad og Drikke</a></li>
                         <li class="links"><a href="./FAQ.html">FAQ</a></li>
@@ -34,13 +34,29 @@
         </nav>
     </header>
     <main>
-        <section>
-            <article>
-
-            </article>
-            <article>
-
-            </article>
+        <nav class="programDropdown">
+            <a href="#">Tidsplan</a>
+            <div>
+                <span>Kunstnere ▾</span>
+                <div>
+                    <a href="#">Musik</a>
+                    <a href="#">Kunst</a>
+                    <a href="#">Udflugter</a>
+                </div>
+            </div>
+        </nav>
+        <nav class="programDage">
+            <a href="#">Torsdag</a>
+            <a href="#">Fredag</a>
+            <a href="#">Lørdag</a>
+        </nav>
+        <section class="programmer">
+            <!-- <div class="program">
+                <h2>ORA</h2>
+                <p>Kirken</p>
+                <p>15:30</p>
+                <i class="fa-regular fa-heart"></i>
+            </div> -->
         </section>
 
     </main>
@@ -61,8 +77,8 @@
         </a>
 
         <a href="./index.html">
+            <img src="./assets/img/aliveHjemLogo.svg" alt=" Alive Festival Logo">
             <div class="footerLink">
-                <img src="./assets/img/aliveHjemLogo.svg" alt=" Alive Festival Logo">
                 <p class="hjem">Hjem</p>
             </div>
         </a>
