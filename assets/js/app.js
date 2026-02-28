@@ -58,7 +58,7 @@ const nyhederForside = [
     },
     {
         billede: "./assets/img/billetter-nyheder.webp",
-        dato: "5. juni",
+        dato: "5. juni 2025",
         titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
         indhold: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
         farve: "var(--pink)",
