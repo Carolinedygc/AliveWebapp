@@ -47,7 +47,32 @@ document.addEventListener('click', function (event) {
     }
 });
 
+// Forside - nyheder
+const nyhederForside = [
+    {
+        billede: "./assets/img/silent_disco_forside.webp",
+        dato: "15. juli 2025",
+        titel: "Silent Disco på Alive Festival 2025",
+        indhold: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne - nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar.",
+        farve: "var(--alivegrønd)",
+    },
+    {
+        billede: ".aseets/img/nyhed_billet_forside.webp",
+        dato: "5. juni",
+        titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
+        indhold: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
+        farve: "var(--pink)",
+    },
+    {
+        billede: ".assets/img/nye-musik-navne-nyhed.webp",
+        dato: "14. marts 2025",
+        titel: "Fem nye musiknavne til festivalplakaten",
+        indhold: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem - og resten af programmet med kunst, musik og udflugter - under 'Program'.",
+        farve: "var(--gul)",
+    }
+]
 
+const nyhedForside = document.querySelector(".nyheder-forside");
 
 // musik program 
 
