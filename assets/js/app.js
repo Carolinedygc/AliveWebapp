@@ -54,17 +54,17 @@ const nyhederForside = [
         dato: "15. juli 2025",
         titel: "Silent Disco på Alive Festival 2025",
         indhold: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne - nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar.",
-        farve: "var(--alivegrønd)",
+        farve: "var(--alivegrøn)",
     },
     {
-        billede: ".aseets/img/nyhed_billet_forside.webp",
+        billede: "./assets/img/billetter-nyheder.webp",
         dato: "5. juni",
         titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
         indhold: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
         farve: "var(--pink)",
     },
     {
-        billede: ".assets/img/nye-musik-navne-nyhed.webp",
+        billede: "./assets/img/nye-musiknavne-nyhed.webp",
         dato: "14. marts 2025",
         titel: "Fem nye musiknavne til festivalplakaten",
         indhold: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem - og resten af programmet med kunst, musik og udflugter - under 'Program'.",
@@ -72,7 +72,40 @@ const nyhederForside = [
     }
 ]
 
-const nyhedForside = document.querySelector(".nyheder-forside");
+const nyhedForside = document.querySelector(".cards-nyheder-forside");
+if (nyhedForside) {
+    nyhedForside.innerHTML = "";
+
+    // laver en ny div og giver den en class
+    nyhederForside.forEach(nyhed => {
+        let card = document.createElement('div');
+        card.classList.add('nyhed-forside');
+        card.style.backgroundColor = nyhed.farve;
+
+        card.innerHTML =
+            `<img src="${nyhed.billede}" alt="${nyhed.titel} image">
+            <p>${nyhed.dato}</p>
+            <h2>${nyhed.titel}</h2>
+            <p>${nyhed.indhold}</p>
+            `
+
+        nyhedForside.appendChild(card);
+    });
+}
+
+
+// knap til flere nyheder
+const nyhedForsideKnap = document.querySelector(".btn-nyheder-forside-wrap");
+
+if (nyhedForsideKnap) {
+    const nyhederKnapForside = document.createElement("a");
+    nyhederKnapForside.classList.add("btn-nyheder-forside");
+    nyhederKnapForside.href = "./nyheder.html";
+    nyhederKnapForside.textContent = "Se flere nyheder";
+    nyhedForsideKnap.appendChild(nyhederKnapForside);
+}
+
+
 
 // musik program 
 
