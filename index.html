@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="./assets/js/app.js" defer></script>
-    s
+
 </head>
 
 <body>
@@ -69,6 +69,26 @@
         <h2 class="news-heading-forside">Nyheder</h2>
         <section class="cards-nyheder-forside" aria-label="udvalgte nyheder"></section>
         <div class="btn-nyheder-forside-wrap"></div>
+        <section class="nyhedsbrev-forside" aria-label="nyhedsbrev-overskrift">
+            <h3 id="nyhedsbrev-forside-overskrift">TILMELD DIG ALIVE FESTIVALS NYHEDSBREV</h3>
+            <form class="nyhedsbrev-forside-form" action="/tilmed">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="nb-navn">NAVN<span aria-hidden="true">*</span></label>
+                        <input id="nb-navn" name="navn" type="text" autocomplete="name" required />
+                        <p class="field-hint" id="hint-navn" hidden>Navn skal udfyldes.</p>
+                    </div>
+                    <div class="form-field">
+                        <label for="nb-email">EMAIL<span aria-hidden="true">*</span></label>
+                        <input id="nb-email" name="email" type="email" autocomplete="email" required />
+                        <p class="field-hint" id="hint-email" hidden>Indtast en gyldig email (fx navn@domæne.dk).</p>
+                    </div>
+                </div>
+                <div class="btn-nyhedsbrev-forside-wrap">
+                    <button type="submit" class="btn-nyhedsbrev-forside">Tilmeld dig nu</button>
+                </div>
+            </form>
+        </section>
     </main>
     <footer>
 

@@ -93,7 +93,6 @@ if (nyhedForside) {
     });
 }
 
-
 // knap til flere nyheder
 const nyhedForsideKnap = document.querySelector(".btn-nyheder-forside-wrap");
 
@@ -104,8 +103,6 @@ if (nyhedForsideKnap) {
     nyhederKnapForside.textContent = "Se flere nyheder";
     nyhedForsideKnap.appendChild(nyhederKnapForside);
 }
-
-
 
 // musik program 
 
@@ -437,11 +434,9 @@ const kunstnere = [
     },
 ]
 
-
 // fang .programmer i HTML
 const programEl = document.querySelector('.programmer');
 // Tøm containeren
-
 
 if (programEl) {
     programEl.innerHTML = '';
