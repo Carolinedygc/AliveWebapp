@@ -13,8 +13,11 @@ body {
     --mørkegrøn: #2e4428;
     --alivegrøn: #d7ffc2;
     --gul: #ffffdf;
+    --lysbrun: #d4b5a8;
 
     /* font */
+
+    font-family: Arial, Helvetica, sans-serif;
 
     line-height: 1.5;
 }
@@ -238,5 +241,128 @@ div.program {
         display: flex;
         align-self: flex-end;
         font-size: 2rem;
+    }
+}
+
+
+/* tidsplan */
+
+.vaelger {
+    display: flex;
+
+    a {
+        height: 50px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--lysbrun);
+        text-decoration: none;
+        color: var(--brun);
+        border: var(--brun) solid 0.5px;
+    }
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--lysbrun);
+    color: var(--brun);
+}
+
+a.valgtSide {
+    font-weight: bolder;
+    box-shadow: inset 2px 2px 8px rgba(66, 45, 39, 0.5);
+    font-style: italic;
+}
+
+
+/* program dropdown */
+.programDropdown {
+    position: relative;
+}
+
+.dropdownKnap {
+    width: 100%;
+    height: 50px;
+    border: var(--brun) solid 1px;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+.menu.synlig {
+    display: block;
+}
+
+.pil.aaben {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.menuItem {
+    width: 100%;
+    height: 50px;
+}
+
+.menuItem[data-value="alle"] {
+    background-color: var(--lysbrun);
+}
+
+.menuItem[data-value="musik"] {
+    background-color: var(--pink);
+}
+
+.menuItem[data-value="udflugter"] {
+    background-color: var(--alivegrøn);
+}
+
+.menuItem[data-value="kunst"] {
+    background-color: var(--gul);
+}
+
+.menuItem[data-value="andet"] {
+    background-color: var(--mosgrøn);
+    color: var(--gul);
+}
+
+.dropdownKnap.musik {
+    background-color: var(--pink);
+}
+
+.dropdownKnap.udflugter {
+    background-color: var(--alivegrøn);
+}
+
+.dropdownKnap.kunst {
+    background-color: var(--gul);
+}
+
+.dropdownKnap.andet {
+    background-color: var(--mosgrøn);
+}
+
+.dropdownKnap.alle {
+    background-color: var(--lysbrun);
+}
+
+
+/* dags filter */
+
+.programDage {
+    .dag {
+        height: 50px;
+        background-color: var(--brun);
+        color: var(--gul);
+    }
+
+    .dag.aktiv {
+        color: var(--brun);
+        background-color: #d4b5a8;
+        font-weight: bold;
     }
 }
