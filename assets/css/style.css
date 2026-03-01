@@ -32,9 +32,8 @@ h6 {
 }
 
 /* HEADER */
-.aktiv a {
-    color: var(--pink);
-    background-color: var(--brun);
+.aktiv {
+    opacity: 0.4;
 }
 
 header {
