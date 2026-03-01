@@ -240,7 +240,7 @@ const kunstnere = [
         navn: "Paydar",
         scene: "Havescenen",
         tid: "01:00",
-        dag: "lørdag",
+        dag: "fredag",
         kategori: "musik",
         billede: "",
         favorit: false
@@ -459,6 +459,110 @@ if (programEl) {
         programEl.appendChild(card);
     });
 }
+
+// Dropdown
+
+const kategoriLabels = {
+    alle: "Alle",
+    musik: "Musik",
+    udflugter: "Udflugter",
+    kunst: "Kunst",
+    andet: "Andet",
+};
+
+let valgt = "alle";
+
+const knap = document.getElementById("dropdownKnap");
+const menu = document.getElementById("menu");
+const pil = document.getElementById("pil");
+const valgtLabel = document.getElementById("valgt");
+
+// Åbn/luk menu
+knap.addEventListener("click", () => {
+    menu.classList.toggle("synlig");
+    pil.classList.toggle("aaben");
+});
+
+// Luk menu hvis man klikker udenfor
+document.addEventListener("click", (e) => {
+    if (!knap.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("synlig");
+        pil.classList.remove("aaben");
+    }
+});
+
+document.querySelectorAll(".menuItem").forEach((item) => {
+    item.addEventListener("click", () => {
+        valgt = item.dataset.value;
+
+        // Opdater tekst og farve på knappen, ved at skifte klassen
+        valgtLabel.textContent = kategoriLabels[valgt];
+        knap.classList.remove("alle", "musik", "udflugter", "kunst", "andet");
+        knap.classList.add(valgt);
+
+        // Luk menu
+        menu.classList.remove("synlig");
+        pil.classList.remove("aaben");
+
+        // Filtrer kunstnere
+        const filtreret = valgt === "alle"
+            ? kunstnere
+            : kunstnere.filter(k => k.kategori === valgt);
+
+        // Ryd listen og vis de filtrerede kunstnere
+        programEl.innerHTML = '';
+        filtreret.forEach(kunstner => {
+            const card = document.createElement('div');
+            card.classList.add('program');
+            card.innerHTML = `
+                <h2>${kunstner.navn}</h2>
+                <p>${kunstner.scene}</p>
+                <p>${kunstner.tid}</p>
+                <i class="fa-regular fa-heart"></i>
+            `;
+            programEl.appendChild(card);
+        });
+    });
+});
+
+// filtre dage
+
+let valgtDag = "alle";
+
+document.querySelectorAll(".dag").forEach((dagKnap) => {
+    dagKnap.addEventListener("click", () => {
+        if (valgtDag === dagKnap.dataset.value) {
+            valgtDag = "alle";
+            document.querySelectorAll(".dag").forEach(d => d.classList.remove("aktiv"));
+        } else {
+            valgtDag = dagKnap.dataset.value;
+            document.querySelectorAll(".dag").forEach(d => d.classList.remove("aktiv"));
+            dagKnap.classList.add("aktiv");
+        }
+
+        // Filtrer på både dag og kategori
+        const filtreret = kunstnere.filter(k => {
+            const dagMatch = valgtDag === "alle" || k.dag === valgtDag;
+            const kategoriMatch = valgt === "alle" || k.kategori === valgt;
+            return dagMatch && kategoriMatch;
+        });
+
+        // Ryd og vis
+        programEl.innerHTML = '';
+        filtreret.forEach(kunstner => {
+            const card = document.createElement('div');
+            card.classList.add('program');
+            card.innerHTML = `
+                <h2>${kunstner.navn}</h2>
+                <p>${kunstner.scene}</p>
+                <p>${kunstner.tid}</p>
+                <i class="fa-regular fa-heart"></i>
+            `;
+            programEl.appendChild(card);
+        });
+    });
+});
+
 
 // FRIVILLIG
 const frivilligRoller = [
