@@ -29,8 +29,9 @@ h6 {
 }
 
 /* HEADER */
-.aktiv {
-    opacity: 0.5;
+.aktiv a {
+    color: var(--pink);
+    background-color: var(--brun);
 }
 
 header {
@@ -467,7 +468,6 @@ div.program {
 }
 
 .emailFrivillig {
-    text-decoration: none;
     color: var(--brun);
 }
 
