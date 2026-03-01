@@ -580,13 +580,11 @@ const frivilligRoller = [
     },
     {
         titel: "365 frivillig",
-        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder - hele året rundt. Vi søger løbende nye 365'ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu. Vi har mange forskellige divisioner hos Alive Festival, og vi er sikre på, at vi nok skal finde noget, der passer til dig!",
+        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder – hele året rundt. Vi søger løbende nye 365’ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu. Vi har mange forskellige divisioner hos Alive Festival, og vi er sikre på, at vi nok skal finde noget, der passer til dig!",
         billede: "./assets/img/365_frivillig.webp",
         farve: "var(--alivegrøn)"
     }
 ]
-
-
 
 // Fanger frivillig i HTML'en
 const frivilligEl = document.querySelector('.cards-frivillig');
@@ -623,5 +621,5 @@ pdfBtnFrivillig.href = "./assets/Frivillighaandbog-2025.pdf";
 pdfBtnFrivillig.target = "_blank";
 pdfBtnFrivillig.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`;
 
-// Putter knappen ind i dens tilhørende sektion
+// Put knappen ind i dens tilhørende sektion
 frivilligKnap.appendChild(pdfBtnFrivillig);
