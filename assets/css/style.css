@@ -506,6 +506,7 @@ a.valgtSide {
 .menu {
     display: none;
     position: absolute;
+    width: 100%;
     left: 0;
     z-index: 10;
 }
