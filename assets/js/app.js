@@ -46,6 +46,64 @@ document.addEventListener('click', function (event) {
         closeMenu();
     }
 });
+
+// Forside - nyheder
+const nyhederForside = [
+    {
+        billede: "./assets/img/silent_disco_forside.webp",
+        dato: "15. juli 2025",
+        titel: "Silent Disco på Alive Festival 2025",
+        indhold: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne - nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar.",
+        farve: "var(--alivegrøn)",
+    },
+    {
+        billede: "./assets/img/billetter-nyheder.webp",
+        dato: "5. juni 2025",
+        titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
+        indhold: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
+        farve: "var(--pink)",
+    },
+    {
+        billede: "./assets/img/nye-musiknavne-nyhed.webp",
+        dato: "14. marts 2025",
+        titel: "Fem nye musiknavne til festivalplakaten",
+        indhold: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem - og resten af programmet med kunst, musik og udflugter - under 'Program'.",
+        farve: "var(--gul)",
+    }
+]
+
+const nyhedForside = document.querySelector(".cards-nyheder-forside");
+if (nyhedForside) {
+    nyhedForside.innerHTML = "";
+
+    // laver en ny div og giver den en class
+    nyhederForside.forEach(nyhed => {
+        let card = document.createElement('div');
+        card.classList.add('nyhed-forside');
+        card.style.backgroundColor = nyhed.farve;
+
+        card.innerHTML =
+            `<img src="${nyhed.billede}" alt="${nyhed.titel} image">
+            <p>${nyhed.dato}</p>
+            <h2>${nyhed.titel}</h2>
+            <p>${nyhed.indhold}</p>
+            `
+
+        nyhedForside.appendChild(card);
+    });
+}
+
+// knap til flere nyheder
+const nyhedForsideKnap = document.querySelector(".btn-nyheder-forside-wrap");
+
+if (nyhedForsideKnap) {
+    const nyhederKnapForside = document.createElement("a");
+    nyhederKnapForside.classList.add("btn-nyheder-forside");
+    nyhederKnapForside.href = "./nyheder.html";
+    nyhederKnapForside.textContent = "Se flere nyheder";
+    nyhedForsideKnap.appendChild(nyhederKnapForside);
+}
+
 // musik program 
 
 const kunstnere = [
@@ -376,11 +434,9 @@ const kunstnere = [
     },
 ]
 
-
 // fang .programmer i HTML
 const programEl = document.querySelector('.programmer');
 // Tøm containeren
-
 
 if (programEl) {
     programEl.innerHTML = '';
@@ -506,3 +562,64 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         });
     });
 });
+
+
+// FRIVILLIG
+const frivilligRoller = [
+    {
+        titel: "Almindelig frivillig",
+        tekst: "Til dig, der vil være med på frivilligholdet i tiden omkring festivalen. Du kan som almindelig frivillig enten arbejde 24 timer før, 10 timer under eller 16 timer efter festivalen. Som tak får du en partoutbillet, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Derudover får du mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt.",
+        billede: "./assets/img/almindelig_frivillig.webp",
+        farve: "var(--pink)"
+    },
+    {
+        titel: "Super frivillig",
+        tekst: "Til dig, der vil give den lidt ekstra gas på frivilligfronten omkring festivalen. Du kan som superfrivillig enten arbejde 40 timer før, 20 timer under eller 32 timer efter festivalen. Som tak får du en partoutbillet, 5 ølbilletter, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Du får også mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt. ",
+        billede: "./assets/img/super_frivillig.webp",
+        farve: "var(--gul)"
+    },
+    {
+        titel: "365 frivillig",
+        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder – hele året rundt. Vi søger løbende nye 365’ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu. Vi har mange forskellige divisioner hos Alive Festival, og vi er sikre på, at vi nok skal finde noget, der passer til dig!",
+        billede: "./assets/img/365_frivillig.webp",
+        farve: "var(--alivegrøn)"
+    }
+]
+
+// Fanger frivillig i HTML'en
+const frivilligEl = document.querySelector('.cards-frivillig');
+
+if (frivilligEl) {
+    frivilligEl.innerHTML = ""; // tømmer containeren
+
+    frivilligRoller.forEach(rolle => {
+        // Laver en ny div
+        let card = document.createElement('div');
+
+        // giver den nye div class = card
+        card.classList.add('card');
+        card.style.backgroundColor = rolle.farve;
+
+        card.innerHTML =
+            `<img src="${rolle.billede}" alt="${rolle.titel} image">
+            <h2>${rolle.titel}</h2>
+            <p>${rolle.tekst}</p>`;
+
+        // Får den vist i viewporten
+        frivilligEl.appendChild(card);
+    });
+}
+
+// Knap til frivillig håndbog
+// fanger knappen gennem dens class i HTML'en
+const frivilligKnap = document.querySelector('.btn-frivillig-wrap');
+
+const pdfBtnFrivillig = document.createElement('a');
+
+pdfBtnFrivillig.classList.add("btn-frivillig");
+pdfBtnFrivillig.href = "./assets/Frivillighaandbog-2025.pdf";
+pdfBtnFrivillig.target = "_blank";
+pdfBtnFrivillig.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`;
+
+// Put knappen ind i dens tilhørende sektion
+frivilligKnap.appendChild(pdfBtnFrivillig);

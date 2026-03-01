@@ -22,11 +22,24 @@ body {
     line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--brun);
+}
+
 /* HEADER */
+.aktiv a {
+    color: var(--pink);
+    background-color: var(--brun);
+}
+
 header {
     ul {
         list-style: none;
-        padding: 0;
     }
 
     li {
@@ -35,26 +48,47 @@ header {
     }
 
     nav {
-        background: var(--brun);
+        position: fixed;
         height: 80px;
+        background: var(--brun);
+        top: 0;
+        z-index: 1000;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
         flex-direction: row;
-        position: sticky;
-        top: 0;
+        box-sizing: border-box;
     }
 
     .logoHeader {
         max-width: 100%;
         height: 4rem;
+        justify-items: center;
+        grid-column: 2;
     }
 
     nav ul {
         justify-items: center;
-        justify-content: space-around;
-        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         width: 100%;
         color: var(--gul);
+        align-items: center;
+        margin: 0;
+    }
+
+    .burgerMenuLabel {
+        grid-column: 1;
+    }
+
+    .searchIcon {
+        grid-column: 3;
+    }
+
+    .logoHeader {
         align-items: center;
     }
 
@@ -67,7 +101,13 @@ header {
         margin: 0;
     }
 
-    #burgerMenuIcon,
+    .burgerMenuLabel,
+    .searchIcon {
+        align-items: center;
+        height: 44px;
+    }
+
+    .burgerMenuLabel,
     .searchIcon {
         height: 2rem;
         cursor: pointer;
@@ -75,7 +115,7 @@ header {
 
     /* Dropdown menu */
     #navDropdown {
-        position: absolute;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
@@ -90,7 +130,6 @@ header {
 
     #navDropdown.show {
         max-height: 400px;
-        /* Rigeligt til 6 links */
         opacity: 1;
         visibility: visible;
     }
@@ -178,16 +217,191 @@ footer {
 }
 
 /* FORSIDE */
+.headingEl-Forside {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.dato-forside {
+    padding: 0 2rem 2rem 2rem;
+    margin: 0;
+    text-align: center;
+    color: var(--brun);
+
+}
+
+.hero-forside {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/Forside_billede.webp);
+    background-size: cover;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+}
+
+.intro-forside {
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+    line-height: 1.5;
+    color: var(--gul);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    height: 250px;
+    display: grid;
+}
 
 
+/* FOCUSED ENTRY POINTS */
+.fep-forside {
+    display: flex;
+    flex-direction: column;
+}
+
+.focus-forside {
+    position: relative;
+    padding: 2rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.focus-forside img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2 / 1;
+    display: block;
+    opacity: 0.7;
+}
+
+.focus-forside h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--brun);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
 
 
+/* NYHEDER - FORSIDE */
+.news-heading-forside {
+    justify-content: center;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.cards-nyheder-forside {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nyhed-forside {
+    width: min(100%, 336px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    height: 600px;
+}
+
+
+.nyhed-forside img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.nyhed-forside p {
+    margin: 0;
+    padding: 1rem;
+}
+
+.nyhed-forside h2 {
+    padding: 0 1rem 0 1rem;
+    margin: 0;
+}
+
+/* Knap til flere nyheder */
+.btn-nyheder-forside {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 32px auto 32px auto;
+    background: var(--pink);
+}
+
+/* NYHEDSBREV - FORSIDE */
+
+.nyhedsbrev-forside {
+    max-width: 980px;
+    margin: 50px 0 50px 0;
+    padding: 2rem;
+}
+
+
+.nyhedsbrev-forside h3 {
+    font-size: clamp(1.4rem, 3.8vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+    color: var(--brun);
+}
+
+.form-row {
+    display: flex;
+
+}
+
+.btn-nyhedsbrev-wrap {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: .5rem;
+}
+
+.nyhedsbrev-forside input[type="text"],
+.nyhedsbrev-forside input[type="email"] {
+    border: 0;
+    border-bottom: 2px solid var(--brun);
+    padding: .4rem 0 .5rem 0;
+}
+
+.form-field {
+    color: var(--brun);
+}
+
+.btn-nyhedsbrev-forside {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 32px auto 32px 0;
+    background: var(--pink);
+}
 
 /* PROGRAMMER */
 nav.programDropdown {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+    margin-top: 80px;
 
     a,
     span {
@@ -249,6 +463,7 @@ div.program {
 
 .vaelger {
     display: flex;
+    margin-top: 80px;
 
     a {
         height: 50px;
@@ -365,4 +580,63 @@ a.valgtSide {
         background-color: #d4b5a8;
         font-weight: bold;
     }
+}
+
+/* FRIVILLIG */
+.blivFrivilligheader {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 0;
+}
+
+.intro-frivilligSide {
+    padding: 2rem;
+    margin: 0;
+}
+
+.emailFrivillig {
+    color: var(--brun);
+}
+
+/* Frivillig - Cards */
+.cards-frivillig {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    width: min(100%, 336px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    height: 600px;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h2,
+.card p {
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Knap - se frivillighåndbog */
+
+.btn-frivillig {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 50px auto 120px auto;
+    background: var(--pink);
 }
