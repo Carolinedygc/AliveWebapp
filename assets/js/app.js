@@ -104,6 +104,59 @@ if (nyhedForsideKnap) {
     nyhedForsideKnap.appendChild(nyhederKnapForside);
 }
 
+// FRIVILLIG
+const frivillige = [
+    {
+        titel: "Almindelig frivillig",
+        tekst: "Som almindelig frivillig kan du enten arbejde 24 timer før, 10 timer under eller 16 timer efter festivalen. Som tak får du en partoutbillet, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage.",
+        billede: "./assets/img/almindelig_frivillig.webp",
+        farve: "var(--pink)"
+    },
+    {
+        titel: "Super frivillig",
+        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder - hele året rundt. Vi søger løbende nye 365'ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu. ",
+        billede: "./assets/img/super_frivillig.webp",
+        farve: "var(--gul)"
+    },
+    {
+        titel: "365 frivillig",
+        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder - hele året rundt. Vi søger løbende nye 365'ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu.",
+        billede: "./assets/img/365_frivillig.webp",
+        farve: "var(--alivegrøn)"
+    }
+];
+
+const frivilligEl = document.querySelector(".cards-frivillig-wrap");
+if (frivilligEl) {
+    frivilligEl.innerHTML = "";
+
+    // laver en ny div og giver den en class
+    frivillige.forEach(frivillig => {
+        let card = document.createElement('div');
+        card.classList.add('frivillig-rolle');
+        card.style.backgroundColor = frivillig.farve;
+
+        card.innerHTML =
+            `<img src="${frivillig.billede}" alt="${frivillig.titel} image">
+            <h2>${frivillig.titel}</h2>
+            <p>${frivillig.tekst}</p>
+            `
+
+        frivilligEl.appendChild(card);
+    });
+}
+
+//Knap til frivillig håndbog
+const frivilligHaandbogKnap = document.querySelector(".btn-frivillig");
+
+if (frivilligHaandbogKnap) {
+    const frivilligKnap = document.createElement("a");
+    frivilligKnap.classList.add("btn-frivillig-haandbog");
+    frivilligKnap.href = "./assets/Frivillighaandbog-2025.pdf";
+    frivilligKnap.textContent = "Se frivillighåndbog";
+    frivilligHaandbogKnap.appendChild(frivilligKnap);
+}
+
 // musik program 
 
 const kunstnere = [
@@ -563,61 +616,3 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         });
     });
 });
-
-
-// FRIVILLIG
-
-const frivilligeRoller = [
-    {
-        titel: "Almindelig frivillig",
-        tekst: "Til dig, der vil være med på frivilligholdet i tiden omkring festivalen. Du kan som almindelig frivillig enten arbejde 24 timer før, 10 timer under eller 16 timer efter festivalen. Som tak får du en partoutbillet, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Derudover får du mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt.",
-        billede: ".assets/img/almindelig_frivillig.webp",
-        farve: "var(--pink)"
-    },
-    {
-        titel: "Super frivillig",
-        tekst: "Til dig, der vil give den lidt ekstra gas på frivilligfronten omkring festivalen. Du kan som superfrivillig enten arbejde 40 timer før, 20 timer under eller 32 timer efter festivalen. Som tak får du en partoutbillet, 5 ølbilletter, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Du får også mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt.",
-        billede: "./assets/img/super_frivillig.webp",
-        farve: "var(--gul)"
-    },
-    {
-        titel: "365 frivillig",
-        tekst: "Vi elsker at skabe festival sammen med holdspillere, ildsjæle og vaskeægte nørder på alle områder – hele året rundt. Vi søger løbende nye 365’ere, og nedenfor kan du se, hvilke steder vi har åbent for ansøgninger lige nu. Vi har mange forskellige divisioner hos Alive Festival, og vi er sikre på, at vi nok skal finde noget, der passer til dig!",
-        billede: "./assets/img/365_frivillig.webp",
-        farve: "var(--alivegrøn)"
-    }
-]
-
-// Fanger frivillig i HTML'en
-const frivilligRollerEl = document.querySelector(".cards-frivillig-wrap");
-
-if (frivilligRollerEl) {
-    frivilligRollerEl.innerHTML = "";
-
-    frivilligRollerEl.forEach(rolle => {
-        let card = document.createElement('div');
-
-        card.classList.add('card');
-        card.style.backgroundColor = rolle.farve;
-
-        card.innerHTML =
-            `<img src="${rolle.billede} alt="${rolle.titel}">
-        <h2>${rolle.titel}</h2>
-        <p>${rolle.tekst}`
-
-        frivilligRollerEl.appendChild(card);
-    })
-}
-
-// Knap til frivillig håndbog
-// fanger knappen gennem dens class i HTML'en
-const frivilligKnap = document.querySelector(".btn-frivillig");
-
-const pdfBtnFrivillig = document.createElement('a');
-
-BtnFrivillig.classList.add("btn-frivillig");
-BtnFrivillig.href = ".assets/Frivillighaandbogg-2025.pdf";
-BtnFrivillig.target = "-blank";
-BtnFrivillig.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`
-
-frivilligKnap.appendChild(BtnFrivillig);
