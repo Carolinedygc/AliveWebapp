@@ -602,13 +602,13 @@ a.valgtSide {
 .cards-frivillig-wrap {
     padding: 1.5rem;
     gap: 3rem;
-    justify-content: center;
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .frivillig-rolle {
-    width: min(100%, 336px);
+    width: 336px;
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
     height: 550px;
 }
