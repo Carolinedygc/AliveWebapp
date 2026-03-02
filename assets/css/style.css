@@ -315,7 +315,6 @@ footer {
     object-fit: cover;
 }
 
-
 .nyhed-forside p {
     margin: 0;
     padding: 1rem;
@@ -602,7 +601,7 @@ a.valgtSide {
 .cards-frivillig {
     padding: 1.5rem;
     gap: 3rem;
-    justify-items: center;
+    justify-content: center;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -625,9 +624,9 @@ a.valgtSide {
     padding: 1rem;
 }
 
-/* Knap - se frivillighåndbog */
 
-.btn-frivillig {
+/* Knap - se frivillighåndbog */
+.btn-frivllig {
     text-decoration: none;
     color: var(--brun);
     display: block;
