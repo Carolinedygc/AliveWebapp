@@ -153,7 +153,8 @@ if (frivilligHaandbogKnap) {
     const frivilligKnap = document.createElement("a");
     frivilligKnap.classList.add("btn-frivillig-haandbog");
     frivilligKnap.href = "./assets/Frivillighaandbog-2025.pdf";
-    frivilligKnap.textContent = "Se frivillighåndbog";
+    frivilligKnap.target = "_blank";
+    frivilligKnap.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`;
     frivilligHaandbogKnap.appendChild(frivilligKnap);
 }
 
