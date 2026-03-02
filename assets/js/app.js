@@ -114,7 +114,7 @@ const kunstnere = [
         tid: "15:30",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "ORA.webp",
         favorit: false
     },
     {
@@ -446,6 +446,7 @@ if (programEl) {
         const card = document.createElement('div');
         // Giv div'en klassen "program"
         card.classList.add('program');
+        card.style.backgroundImage = `url('./assets/img/${kunstner.billede}')`;
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
