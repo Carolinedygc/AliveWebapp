@@ -565,16 +565,17 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
 
 
 // FRIVILLIG
-const frivilligRoller = [
+
+const frivilligeRoller = [
     {
         titel: "Almindelig frivillig",
         tekst: "Til dig, der vil være med på frivilligholdet i tiden omkring festivalen. Du kan som almindelig frivillig enten arbejde 24 timer før, 10 timer under eller 16 timer efter festivalen. Som tak får du en partoutbillet, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Derudover får du mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt.",
-        billede: "./assets/img/almindelig_frivillig.webp",
+        billede: ".assets/img/almindelig_frivillig.webp",
         farve: "var(--pink)"
     },
     {
         titel: "Super frivillig",
-        tekst: "Til dig, der vil give den lidt ekstra gas på frivilligfronten omkring festivalen. Du kan som superfrivillig enten arbejde 40 timer før, 20 timer under eller 32 timer efter festivalen. Som tak får du en partoutbillet, 5 ølbilletter, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Du får også mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt. ",
+        tekst: "Til dig, der vil give den lidt ekstra gas på frivilligfronten omkring festivalen. Du kan som superfrivillig enten arbejde 40 timer før, 20 timer under eller 32 timer efter festivalen. Som tak får du en partoutbillet, 5 ølbilletter, forplejning under vagten samt adgang til hygge og kaffe i frivilligloungen alle dage. Du får også mulighed for at lave tekstiltryk i årets Alive-design på din egen medbragte t-shirt.",
         billede: "./assets/img/super_frivillig.webp",
         farve: "var(--gul)"
     },
@@ -587,39 +588,35 @@ const frivilligRoller = [
 ]
 
 // Fanger frivillig i HTML'en
-const frivilligEl = document.querySelector('.cards-frivillig');
+const frivilligRollerEl = document.querySelector(".cards-frivillig-wrap");
 
-if (frivilligEl) {
-    frivilligEl.innerHTML = ""; // tømmer containeren
+if (frivilligRollerEl) {
+    frivilligRollerEl.innerHTML = "";
 
-    frivilligRoller.forEach(rolle => {
-        // Laver en ny div
+    frivilligRollerEl.forEach(rolle => {
         let card = document.createElement('div');
 
-        // giver den nye div class = card
         card.classList.add('card');
         card.style.backgroundColor = rolle.farve;
 
         card.innerHTML =
-            `<img src="${rolle.billede}" alt="${rolle.titel} image">
-            <h2>${rolle.titel}</h2>
-            <p>${rolle.tekst}</p>`;
+            `<img src="${rolle.billede} alt="${rolle.titel}">
+        <h2>${rolle.titel}</h2>
+        <p>${rolle.tekst}`
 
-        // Får den vist i viewporten
-        frivilligEl.appendChild(card);
-    });
+        frivilligRollerEl.appendChild(card);
+    })
 }
 
 // Knap til frivillig håndbog
 // fanger knappen gennem dens class i HTML'en
-const frivilligKnap = document.querySelector('.btn-frivillig-wrap');
+const frivilligKnap = document.querySelector(".btn-frivillig");
 
 const pdfBtnFrivillig = document.createElement('a');
 
-pdfBtnFrivillig.classList.add("btn-frivillig");
-pdfBtnFrivillig.href = "./assets/Frivillighaandbog-2025.pdf";
-pdfBtnFrivillig.target = "_blank";
-pdfBtnFrivillig.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`;
+BtnFrivillig.classList.add("btn-frivillig");
+BtnFrivillig.href = ".assets/Frivillighaandbogg-2025.pdf";
+BtnFrivillig.target = "-blank";
+BtnFrivillig.innerHTML = `Se frivillighåndbog <i class="fa-solid fa-arrow-up-right-from-square"></i>`
 
-// Put knappen ind i dens tilhørende sektion
-frivilligKnap.appendChild(pdfBtnFrivillig);
+frivilligKnap.appendChild(BtnFrivillig);
