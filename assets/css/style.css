@@ -432,7 +432,7 @@ nav.programDropdown {
 
 
 div.program {
-    height: 150px;
+    height: 200px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
@@ -468,7 +468,11 @@ div.program {
     }
 
     h2 {
-        font-size: 36px;
+        font-size: 30px;
+    }
+
+    p {
+        padding-left: 1rem;
     }
 
     i {
@@ -478,7 +482,7 @@ div.program {
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 1rem;
+        padding: 2rem;
     }
 }
 
@@ -671,6 +675,58 @@ a.valgtSide {
 
 
 /* BILETTER */
+.billetSide {
+    h1 {
+        padding-top: 80px;
+        text-align: center;
+    }
+}
+
+.billetFormer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .festivalBtn,
+    .campingBtn,
+    .udstyrBtn,
+    .transportBtn,
+    .udflugterBtn {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 200px;
+        height: auto;
+        padding: 8px;
+        border-radius: 8px;
+
+    }
+
+
+    festivalBtn {
+        background-color: var(--pink);
+    }
+
+    .campingBtn {
+        background-color: var(--gul);
+    }
+
+    .udstyrBtn {
+        background-color: var(--mørkegrøn);
+        color: var(--gul);
+    }
+
+    .transportBtn {
+        background-color: var(--mosgrøn);
+        color: var(--gul);
+    }
+
+    .udflugterBtn {
+        background-color: var(--alivegrøn);
+    }
+}
+
 
 .billetter {
 
@@ -684,5 +740,14 @@ a.valgtSide {
         width: 300px;
         height: auto;
         padding: 1rem;
+    }
+
+    h3 {
+        align-self: flex-start;
+        padding-left: 6rem;
+    }
+
+    h2 {
+        padding-top: 6rem;
     }
 }
