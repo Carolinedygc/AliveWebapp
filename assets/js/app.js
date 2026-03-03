@@ -116,6 +116,7 @@ const kunstnere = [
         kategori: "musik",
         billede: "ORA.webp",
         favorit: false
+
     },
     {
         navn: "Uden ord",
@@ -446,13 +447,15 @@ if (programEl) {
         const card = document.createElement('div');
         // Giv div'en klassen "program"
         card.classList.add('program');
-        card.style.backgroundImage = `url('./assets/img/${kunstner.billede}')`;
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
+      </div>
       <i class="fa-regular fa-heart"></i>
     `;
 
@@ -516,10 +519,13 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
-                <h2>${kunstner.navn}</h2>
-                <p>${kunstner.scene}</p>
-                <p>${kunstner.tid}</p>
-                <i class="fa-regular fa-heart"></i>
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
+      <h2>${kunstner.navn}</h2>
+      <p>${kunstner.scene}</p>
+      <p>${kunstner.tid}</p>
+      </div>
+      <i class="fa-regular fa-heart"></i>
             `;
             programEl.appendChild(card);
         });
@@ -554,10 +560,13 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
-                <h2>${kunstner.navn}</h2>
-                <p>${kunstner.scene}</p>
-                <p>${kunstner.tid}</p>
-                <i class="fa-regular fa-heart"></i>
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
+      <h2>${kunstner.navn}</h2>
+      <p>${kunstner.scene}</p>
+      <p>${kunstner.tid}</p>
+      </div>
+      <i class="fa-regular fa-heart"></i>
             `;
             programEl.appendChild(card);
         });

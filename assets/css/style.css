@@ -430,15 +430,34 @@ nav.programDropdown {
 
 div.program {
     height: 150px;
-    background-color: var(--pink);
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    padding: 1rem;
     border: 2px solid var(--brun);
     color: var(--brun);
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    position: relative;
 
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 50%;
+        grid-column: 1fr;
+        display: block;
+    }
+
+    .kunstnerText {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        grid-column: 1fr;
+    }
 
     h2,
     p {
@@ -453,6 +472,10 @@ div.program {
         display: flex;
         align-self: flex-end;
         font-size: 2rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 1rem;
     }
 }
 
@@ -638,4 +661,24 @@ a.valgtSide {
     padding: 0.5rem 1rem;
     margin: 50px auto 120px auto;
     background: var(--pink);
+}
+
+
+
+
+/* BILETTER */
+
+.billetter {
+
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 300px;
+        height: auto;
+        padding: 1rem;
+    }
 }
