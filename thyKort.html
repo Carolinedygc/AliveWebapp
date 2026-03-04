@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alive Festival ┃ Favoritter </title>
+    <title> Alive Festival ┃ Thy kort </title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="./assets/js/app.js" defer></script>
+
 </head>
 
 <body>
@@ -34,36 +35,19 @@
         </nav>
     </header>
     <main>
-        <section class="vaelger">
-            <a href="./program.html" class="valgtSide">Program</a>
-            <a href="./tidsplan.html">Tidsplan</a>
-        </section>
-
-        <div class="programDropdown">
-            <button class="dropdownKnap" id="dropdownKnap">
-                <span id="valgt">Alle</span>
-                <span class="pil" id="pil">▾</span>
-            </button>
-
-            <div class="menu" id="menu">
-                <button class="menuItem" data-value="alle">Alle</button>
-                <button class="menuItem" data-value="musik">Musik</button>
-                <button class="menuItem" data-value="udflugter">Udflugter</button>
-                <button class="menuItem" data-value="kunst">Kunst</button>
-                <button class="menuItem" data-value="andet">Andet</button>
-            </div>
-        </div>
-
-
-        <nav class="programDage">
-            <button class="dag" data-value="torsdag">Torsdag</button>
-            <button class="dag" data-value="fredag">Fredag</button>
-            <button class="dag" data-value="lørdag">Lørdag</button>
+        <nav class="kort-placering">
+            <ul>
+                <li>
+                    <a href="./festivalKort.html" class="kort">Pladsen</a>
+                </li>
+                <li>
+                    <a href="./thistedKort.html" class="kort">Thisted</a>
+                </li>
+                <li>
+                    <a href="./thyKort.html" class="aktiv-kort">Thy</a>
+                </li>
+            </ul>
         </nav>
-        <div class="favoritter">
-
-        </div>
-
     </main>
     <footer>
 
@@ -103,6 +87,7 @@
         </a>
 
     </footer>
+
 </body>
 
 </html>

@@ -398,8 +398,78 @@ footer {
 }
 
 /* KORT */
+
+.transport-main {
+    margin-top: 80px;
+    padding: 0;
+}
+
+.transport-main h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
 .kortOgTransport {
     background-color: var(--alivegrøn);
+}
+
+.kort-placering {
+    width: 100%;
+    height: 50px;
+    background-color: var(--brun);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kort-placering ul {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 0;
+}
+
+.kort-placering li a {
+    color: var(--gul);
+}
+
+.kort {
+    text-decoration: none;
+}
+
+.kort-billede {
+    width: 400px;
+    height: 600px;
+}
+
+.aktiv-kort {
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2.5px;
+}
+
+.transport-wrapper {
+    padding: 2rem;
+}
+
+.btn-transport {
+    text-decoration: none;
+    color: var(--brun);
+    display: block;
+    width: fit-content;
+    border: 1.5px solid var(--brun);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 32px auto 32px 0;
+    background: var(--pink);
+}
+
+.btn-transport a {
+    text-decoration: none;
+    color: var(--brun);
+    padding: 1rem 1rem 0;
 }
 
 /* PROGRAMMER */
@@ -510,7 +580,7 @@ div.program {
     }
 }
 
-button {
+.dag {
     font-family: inherit;
     font-size: inherit;
     background-color: var(--lysbrun);

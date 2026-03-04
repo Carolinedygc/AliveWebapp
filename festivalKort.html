@@ -33,20 +33,28 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Kort og transport</h1>
-        <div class="festivalsplads-kort">
-            <img src="./assets/img/BILETTER/AAR-THY.png" alt="">
-        </div>
-        <div class="thisted-kort">
-            <img src="./assets/img/BAEST.webp" alt="">
-        </div>
-        <div class="thy-kort">
-            <img src="./assets/img/BILETTER/HYTTE.png" alt="">
-        </div>
-        <article>
-            <h2>Vi har busser der kan transportere dig til og fra festivallen. Se transport billetter her: </h2>
-            <a href="./biletter.html#transport">Transport billetter</a>
+    <main class="transport-main">
+        <nav class="kort-placering">
+            <ul>
+                <li>
+                    <a href="./festivalKort.html" class="aktiv-kort">Pladsen</a>
+                </li>
+                <li>
+                    <a href="./thistedKort.html" class="kort">Thisted</a>
+                </li>
+                <li>
+                    <a href="./thyKort.html" class="kort">Thy</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Kort over festivalpladsen</h1>
+        <img src="./assets/img/festival-kort.webp" alt="Billede over festivalspladsen" class="kort-billede">
+        <article class="transport-wrapper">
+            <h2>Transport</h2>
+            <p>Vi har busser der kan transportere dig til og fra festivallen. Se transport billetter her: </p>
+            <button class="btn-transport">
+                <a href="./biletter.html#transport">Transport billetter</a>
+            </button>
         </article>
     </main>
     <footer>
@@ -79,7 +87,7 @@
             </div>
         </a>
 
-        <a href="./kortOgTransport.html">
+        <a href="./festivalKort.html">
             <div class="footerLink">
                 <i class="fa-solid fa-location-dot"></i>
                 <p>Kort</p>
