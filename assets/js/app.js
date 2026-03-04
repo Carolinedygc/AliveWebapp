@@ -170,6 +170,7 @@ const kunstnere = [
         kategori: "musik",
         billede: "ORA.webp",
         favorit: false
+
     },
     {
         navn: "Uden ord",
@@ -177,7 +178,7 @@ const kunstnere = [
         tid: "16:00",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "UDENORD.webp",
         favorit: false
     },
     {
@@ -186,7 +187,7 @@ const kunstnere = [
         tid: "17:00",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "FAELLESSANG.webp",
         favorit: false
     },
     {
@@ -195,7 +196,7 @@ const kunstnere = [
         tid: "17:05",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "ELIAS.webp",
         favorit: false
     },
     {
@@ -204,7 +205,7 @@ const kunstnere = [
         tid: "18:45",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "ENES.webp",
         favorit: false
     },
     {
@@ -213,7 +214,7 @@ const kunstnere = [
         tid: "21:15",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "BRIMHEIM.webp",
         favorit: false
     },
     {
@@ -222,7 +223,7 @@ const kunstnere = [
         tid: "21:45",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "FAZA.webp",
         favorit: false
     },
     {
@@ -231,7 +232,7 @@ const kunstnere = [
         tid: "23:00",
         dag: "torsdag",
         kategori: "musik",
-        billede: "",
+        billede: "EMMASEHESTEDHØEG.webp",
         favorit: false
     },
 
@@ -242,7 +243,7 @@ const kunstnere = [
         tid: "15:30",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "KAROLINE.webp",
         favorit: false
     },
     {
@@ -251,7 +252,7 @@ const kunstnere = [
         tid: "17:15",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "BETTE.webp",
         favorit: false
     },
     {
@@ -260,7 +261,7 @@ const kunstnere = [
         tid: "18:45",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "OESTEN.webp",
         favorit: false
     },
     {
@@ -269,7 +270,7 @@ const kunstnere = [
         tid: "20:15",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "BAEST.webp",
         favorit: false
     },
     {
@@ -278,7 +279,7 @@ const kunstnere = [
         tid: "21:45",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "DAYYANI.webp",
         favorit: false
     },
     {
@@ -287,7 +288,7 @@ const kunstnere = [
         tid: "23:15",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "SCHOOLOFX.webp",
         favorit: false
     },
     {
@@ -296,7 +297,7 @@ const kunstnere = [
         tid: "01:00",
         dag: "fredag",
         kategori: "musik",
-        billede: "",
+        billede: "PAYDAR.webp",
         favorit: false
     },
 
@@ -307,7 +308,7 @@ const kunstnere = [
         tid: "15:30",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "LEA.webp",
         favorit: false
     },
     {
@@ -316,7 +317,7 @@ const kunstnere = [
         tid: "16:00",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "TAMRARAMNENEY.webp",
         favorit: false
     },
     {
@@ -325,7 +326,7 @@ const kunstnere = [
         tid: "17:30",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "MEKDES.webp",
         favorit: false
     },
     {
@@ -334,7 +335,7 @@ const kunstnere = [
         tid: "19:15",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "VONQUAR.webp",
         favorit: false
     },
     {
@@ -343,7 +344,7 @@ const kunstnere = [
         tid: "20:45",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "DEFMAMADEF.webp",
         favorit: false
     },
     {
@@ -352,7 +353,7 @@ const kunstnere = [
         tid: "22:15",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "100WET.webp",
         favorit: false
     },
     {
@@ -361,7 +362,7 @@ const kunstnere = [
         tid: "23:30",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "KINDMODKIND.webp",
         favorit: false
     },
     {
@@ -370,7 +371,7 @@ const kunstnere = [
         tid: "00:01",
         dag: "lørdag",
         kategori: "musik",
-        billede: "",
+        billede: "TACOBITCH.webp",
         favorit: false
     },
 
@@ -381,7 +382,7 @@ const kunstnere = [
         tid: "Hele dagen",
         dag: "fredag",
         kategori: "kunst",
-        billede: "",
+        billede: "BJOERG.webp",
         favorit: false
     },
     {
@@ -390,7 +391,7 @@ const kunstnere = [
         tid: "21:Hele dagen",
         dag: "fredag",
         kategori: "kunst",
-        billede: "",
+        billede: "TRAADFORTRAAD.webp",
         favorit: false
     },
     {
@@ -399,7 +400,7 @@ const kunstnere = [
         tid: "16:00",
         dag: "fredag",
         kategori: "kusnt",
-        billede: "",
+        billede: "WERK.webp",
         favorit: false
     },
     {
@@ -408,7 +409,7 @@ const kunstnere = [
         tid: "Hele dagen",
         dag: "fredag",
         kategori: "kunst",
-        billede: "",
+        billede: "SOLVEJMIA.webp",
         favorit: false
     },
 
@@ -419,7 +420,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: "THISTEDBRYGHUS.webp",
         favorit: false
     },
     {
@@ -428,7 +429,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: "morgendyp_favorit.webp",
         favorit: false
     },
     {
@@ -437,7 +438,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: "THYWHISKY.webp",
         favorit: false
     },
     {
@@ -446,7 +447,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: "AGGERBIO.webp",
         favorit: false
     },
     {
@@ -455,7 +456,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: "surfskole.webp",
         favorit: false
     },
     {
@@ -464,7 +465,7 @@ const kunstnere = [
         tid: "21:00",
         dag: "fredag",
         kategori: "udflugter",
-        billede: "",
+        billede: ".webp",
         favorit: false
     },
     //   Andet
@@ -474,7 +475,7 @@ const kunstnere = [
         tid: "13:30",
         dag: "fredag",
         kategori: "andet",
-        billede: "",
+        billede: "SEXOGSAMFUND.webp",
         favorit: false
     },
     {
@@ -483,7 +484,7 @@ const kunstnere = [
         tid: "00:00",
         dag: "fredag",
         kategori: "andet",
-        billede: "",
+        billede: "SILENTDISCO.webp",
         favorit: false
     },
 ]
@@ -500,20 +501,36 @@ if (programEl) {
         const card = document.createElement('div');
         // Giv div'en klassen "program"
         card.classList.add('program');
-        card.style.backgroundImage = `url('./assets/img/${kunstner.billede}')`;
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
-      <i class="fa-regular fa-heart"></i>
+      </div>
+      <i class="fa-regular fa-heart" data-navn="${kunstner.navn}"></i>
     `;
+
+        // favorit knap
+        card.querySelector('i').addEventListener('click', (e) => {
+            e.target.classList.toggle('fa-regular');
+            e.target.classList.toggle('fa-solid');
+
+            const kunstnerObj = kunstnere.find(k => k.navn === e.target.dataset.navn);
+            kunstnerObj.favorit = !kunstnerObj.favorit;
+
+            localStorage.setItem('kunstnere', JSON.stringify(kunstnere));
+        });
+
 
         // Tilføj div'en til containeren
         programEl.appendChild(card);
     });
 }
+
+
 
 // Dropdown
 
@@ -532,11 +549,14 @@ const menu = document.getElementById("menu");
 const pil = document.getElementById("pil");
 const valgtLabel = document.getElementById("valgt");
 
+
 // Åbn/luk menu
-knap.addEventListener("click", () => {
-    menu.classList.toggle("synlig");
-    pil.classList.toggle("aaben");
-});
+if (knap) {
+    knap.addEventListener("click", () => {
+        menu.classList.toggle("synlig");
+        pil.classList.toggle("aaben");
+    });
+}
 
 // Luk menu hvis man klikker udenfor
 document.addEventListener("click", (e) => {
@@ -570,10 +590,13 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
-                <h2>${kunstner.navn}</h2>
-                <p>${kunstner.scene}</p>
-                <p>${kunstner.tid}</p>
-                <i class="fa-regular fa-heart"></i>
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
+      <h2>${kunstner.navn}</h2>
+      <p>${kunstner.scene}</p>
+      <p>${kunstner.tid}</p>
+      </div>
+      <i class="fa-regular fa-heart"></i>
             `;
             programEl.appendChild(card);
         });
@@ -608,12 +631,65 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
-                <h2>${kunstner.navn}</h2>
-                <p>${kunstner.scene}</p>
-                <p>${kunstner.tid}</p>
-                <i class="fa-regular fa-heart"></i>
+     <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+      <div class="kunstnerText">
+      <h2>${kunstner.navn}</h2>
+      <p>${kunstner.scene}</p>
+      <p>${kunstner.tid}</p>
+      </div>
+      <i class="fa-regular fa-heart"></i>
             `;
             programEl.appendChild(card);
         });
     });
+});
+
+
+
+// FAVORITTER
+const favoritEl = document.querySelector('.favoritter');
+console.log(favoritEl)
+
+if (favoritEl) {
+    const gemt = localStorage.getItem('kunstnere')
+    const kunstnere = JSON.parse(gemt)
+
+    const favoritter = kunstnere.filter(k => k.favorit === true);
+
+    favoritter.forEach(kunstner => {
+        const card = document.createElement('div');
+        card.classList.add('program');
+        card.innerHTML = `
+            <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
+            <div class="kunstnerText">
+                <h2>${kunstner.navn}</h2>
+                <p>${kunstner.scene}</p>
+                <p>${kunstner.tid}</p>
+            </div>
+            <i class="fa-solid fa-heart data-navn="${kunstner.navn}"></i>
+        `;
+        favoritEl.appendChild(card);
+    });
+}
+
+// BILLETTER
+
+document.querySelector('.festivalBtn').addEventListener('click', () => {
+    document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.campingBtn').addEventListener('click', () => {
+    document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.udstyrBtn').addEventListener('click', () => {
+    document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.transportBtn').addEventListener('click', () => {
+    document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.udflugterBtn').addEventListener('click', () => {
+    document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
 });
