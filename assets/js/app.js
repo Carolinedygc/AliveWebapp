@@ -97,7 +97,7 @@ if (nyhedForside) {
 const nyhedForsideKnap = document.querySelector(".btn-nyheder-forside-wrap");
 
 if (nyhedForsideKnap) {
-    const nyhederKnapForside = document.createElement("button");
+    const nyhederKnapForside = document.createElement("a");
     nyhederKnapForside.classList.add("btn-nyheder-forside");
     nyhederKnapForside.href = "./nyheder.html";
     nyhederKnapForside.textContent = "Se flere nyheder";
