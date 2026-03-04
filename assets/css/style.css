@@ -14,7 +14,7 @@ body {
     --alivegrøn: #d7ffc2;
     --gul: #ffffdf;
     --lysbrun: #d4b5a8;
-
+    --alivegreencard: #D2FDC8;
     /* font */
 
     font-family: Arial, Helvetica, sans-serif;
@@ -73,11 +73,9 @@ header {
 
     nav {
         justify-items: center;
-        justify-content: space-between;
         padding: 0;
         display: flex;
         justify-content: space-evenly;
-
         width: 100%;
         color: var(--gul);
         align-items: center;
@@ -401,39 +399,35 @@ footer {
 /* KORT */
 .transport-main {
     margin-top: 80px;
-    background-color: var(--alivegrøn);
+    background-color: var(--alivegreencard);
     padding: 0;
 }
 
 .transport-main h1 {
     text-align: center;
     padding: 2rem;
+    margin: 0;
 }
 
 .kort-placering {
-
-    width: 100%;
-
-    height: 50px;
-
-    background-color: var(--brun);
-
     display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
+    align-items: center;
+    background: var(--brun);
+    color: var(--gul);
+    height: 80px;
+    padding: 0;
 }
 
 .kort-placering ul {
     list-style: none;
     display: flex;
     gap: 5rem;
-    justify-content: space-evenly;
     margin: 5px;
     padding: 0;
-
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
 }
 
 .kort-placering li a {
@@ -441,13 +435,12 @@ footer {
 }
 
 .kort {
-
     text-decoration: none;
 }
 
 .kort-billede {
-    width: 400px;
-    height: 600px;
+    height: auto;
+    width: 100%;
 }
 
 .aktiv-kort {
@@ -470,7 +463,7 @@ footer {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     padding: 0.5rem 1rem;
-    margin: 32px auto 32px 0;
+    margin: 32px auto 60px 0;
     background: var(--pink);
 }
 
