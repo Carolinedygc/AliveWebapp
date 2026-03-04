@@ -397,6 +397,11 @@ footer {
     background: var(--pink);
 }
 
+/* KORT */
+.kortOgTransport {
+    background-color: var(--alivegrøn);
+}
+
 /* PROGRAMMER */
 nav.programDropdown {
     display: grid;
@@ -409,7 +414,6 @@ nav.programDropdown {
         text-decoration: none;
         color: var(--gul);
     }
-
 }
 
 nav.programDage {
