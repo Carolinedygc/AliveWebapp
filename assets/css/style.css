@@ -409,8 +409,7 @@ footer {
 }
 
 .transport-mainThisted {
-
-    background-color: var(--greenthy);
+    background-color: var(--alivegreencard);
 }
 
 .transport-main h1,
@@ -425,6 +424,7 @@ footer {
     text-align: center;
     background: var(--brun);
     height: 60px;
+    margin-top: 80px;
 }
 
 .kort-placering a {
