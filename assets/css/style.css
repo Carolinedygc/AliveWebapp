@@ -1003,10 +1003,10 @@ a.valgtSide {
 
 /* FAQ Accordion */
 .faqMain {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-color: transparent;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .faqHeadline {
@@ -1014,7 +1014,6 @@ a.valgtSide {
     color: var(--brun);
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    padding-top: 2rem;
 }
 
 .faqContainer {
