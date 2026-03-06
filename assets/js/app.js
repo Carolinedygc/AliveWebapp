@@ -182,26 +182,149 @@ if (frivilligHaandbogKnap) {
 }
 
 // Mad og Drikke 
-/* const madboder [
+const madogDrikke = [
     {
-        navn: "Gadens gastronomer"
+        navn: "Gadens gastronomer",
+        billede: "./assets/img/gadens-gastronomer-madOgDrikke.webp",
+        favorit: false
+
     },
     {
-        navn: "Den grønne fe"
+        navn: "The Taco Truck",
+        billede: "./assets/img/taco-truck-madOgDrikke.webp",
+        favorit: false
     },
     {
-        navn: "The Taco Truck"
+        navn: "Thypisk Pizza",
+        billede: "./assets/img/thypisk-pizza-madOgDrikke.webp",
+        favorit: false
     },
     {
-        navn: "StreetBites Thai"
+        navn: "Mikuna",
+        billede: "./assets/img/mikuna-madOgDrikke.webp",
+        favorit: false
     },
     {
-        navn: "Bryggen"
+        navn: "StreetBites Thai",
+        billede: "./assets/img/street-bites-thai-madOgDrikke.webp",
+        favorit: false
     },
     {
-        navn: "Thypisk Pizza"
-   }
-]; */
+        navn: "Den grønne fe",
+        billede: "./assets/img/den-groenne-fe-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Salke",
+        billede: "./assets/img/salke-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Bryggen",
+        billede: "./assets/img/bryggen-madOgDrikke.webp",
+        favorit: false
+    }
+]
+
+//Fanger .spisesteder-wrap i HTML'en
+const spisestederEl = document.querySelector('.spisesteder-wrap');
+
+if (spisestederEl) {
+    spisestederEl.innerHTML = "";
+
+    madogDrikke.forEach(madbod => {
+        const card = document.createElement('div');
+        card.classList.add('spisested');
+
+        card.innerHTML = `
+        <img src="${madbod.billede}" alt="billede af ${madbod.navn}">
+        <h2>${madbod.navn}</h2>
+        <i class="fa-regular fa-heart" data-navn="${madbod.navn}"></i>
+        `;
+
+        // Føj til favoritter
+        card.querySelector('i').addEventListener('click', (e) => {
+            e.target.classList.toggle('fa-regular');
+            e.target.classList.toggle('fa-solid');
+
+            const spisestedObj = madogDrikke.find(m => m.navn === e.target.dataset.navn);
+            spisestedObj.favorit = !spisestedObj.favorit;
+            localStorage.setItem('madogDrikke', JSON.stringify(madogDrikke));
+        });
+
+        spisestederEl.appendChild(card);
+
+    })
+}
+
+// Gør det samme med barer
+const barer = [
+    {
+        navn: "Bryghusbar",
+        billede: "./assets/img/bryghusbar-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Skovbar",
+        billede: "./assets/img/skovbar-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Havebar",
+        billede: "./assets/img/havebar-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Cocktailbar",
+        billede: "./assets/img/cocktailbar-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Vin- og Whisky- <br> loungen",
+        billede: "./assets/img/vin-og-whiskylounge-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Vadebar",
+        billede: "./assets/img/vadebar-madOgDrikke.webp",
+        favorit: false
+    },
+    {
+        navn: "Bærbar",
+        billede: "./assets/img/baerbar-madOgDrikke.webp",
+        favorit: false
+    }
+]
+
+const barerEl = document.querySelector('.barer-wrap');
+
+if (barerEl) {
+    barerEl.innerHTML = "";
+
+    barer.forEach(bar => {
+        const card = document.createElement('div');
+        card.classList.add('baren');
+
+        card.innerHTML = `
+        <img src="${bar.billede}" alt="${bar.navn}">
+        <h2>${bar.navn}</h2>
+        <i class="fa-regular fa-heart" data-navn="${bar.navn}"></i>
+        `
+
+        card.querySelector('i').addEventListener('click', (e) => {
+            e.target.classList.toggle('fa-regular');
+            e.target.classList.toggle('fa-solid');
+
+            const barObj = barer.find(b => b.navn === e.target.dataset.navn);
+            barObj.favorit = !barObj.favorit;
+            localStorage.setItem('barer', JSON.stringify(barer));
+
+        });
+
+        barerEl.appendChild(card);
+    })
+}
+
 
 // musik program 
 
@@ -575,8 +698,6 @@ if (programEl) {
     });
 }
 
-
-
 // Dropdown
 
 const kategoriLabels = {
@@ -593,7 +714,6 @@ const knap = document.getElementById("dropdownKnap");
 const menu = document.getElementById("menu");
 const pil = document.getElementById("pil");
 const valgtLabel = document.getElementById("valgt");
-
 
 // Åbn/luk menu
 if (knap) {
@@ -688,8 +808,6 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         });
     });
 });
-
-
 
 // FAVORITTER
 const favoritEl = document.querySelector('.favoritter');
