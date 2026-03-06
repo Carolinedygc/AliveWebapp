@@ -181,6 +181,28 @@ if (frivilligHaandbogKnap) {
     frivilligHaandbogKnap.appendChild(frivilligKnap);
 }
 
+// Mad og Drikke 
+/* const madboder [
+    {
+        navn: "Gadens gastronomer"
+    },
+    {
+        navn: "Den grønne fe"
+    },
+    {
+        navn: "The Taco Truck"
+    },
+    {
+        navn: "StreetBites Thai"
+    },
+    {
+        navn: "Bryggen"
+    },
+    {
+        navn: "Thypisk Pizza"
+   }
+]; */
+
 // musik program 
 
 const kunstnere = [
