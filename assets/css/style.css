@@ -1036,9 +1036,18 @@ a.valgtSide {
 }
 
 /* FAQ Accordion */
+#handicap,
+#camping,
+#node,
+#billet,
+#bus,
+#lås {
+    transform: none;
+}
+
 .faqMain {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 3rem;
     background-color: transparent;
     min-height: 90vh;
 }

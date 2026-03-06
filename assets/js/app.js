@@ -1,22 +1,29 @@
 // FAQ Accordion
 const accordionHeaders = document.querySelectorAll(".accordionHeader");
 
-if (accordionHeaders) {
+if (accordionHeaders && accordionHeaders.length) {
     accordionHeaders.forEach(header => {
         header.addEventListener("click", () => {
-            // Skift active klasse på headeren
-            header.classList.toggle("active");
+            const currentContent = header.nextElementSibling;
+            const isOpen = currentContent.style.maxHeight;
 
-            // Find indholdet til accordions
-            let content = header.nextElementSibling;
+            // Lukker hvis der er andre accordions der er åbent
+            accordionHeaders.forEach(other => {
+                if (other !== header) {
+                    other.classList.remove("active");
+                    const otherContent = other.nextElementSibling;
+                    if (otherContent) otherContent.style.maxHeight = null;
+                }
+            });
 
-            // Tjek om panelet er åbent
-            if (content.style.maxHeight) {
-                // Hvis åbent, så luk
-                content.style.maxHeight = null;
+            //Tjekker om noget er åbent
+            if (isOpen) {
+                // Hvis det er åben, så luk det
+                currentContent.style.maxHeight = null;
+
             } else {
-                // Hvis lukket, fold ud ud fra tekstens højde
-                content.style.maxHeight = content.scrollHeight + "px";
+                // Hvis det er lukket, så åben det
+                currentContent.style.maxHeight = currentContent.scrollHeight + "px";
             }
         });
     });
