@@ -1,14 +1,79 @@
+// FAQ Accordion
+const accordionHeaders = document.querySelectorAll(".accordionHeader");
 
+if (accordionHeaders) {
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            // Skift active klasse på headeren
+            header.classList.toggle("active");
+
+            // Find indholdet til accordions
+            let content = header.nextElementSibling;
+
+            // Tjek om panelet er åbent
+            if (content.style.maxHeight) {
+                // Hvis åbent, så luk
+                content.style.maxHeight = null;
+            } else {
+                // Hvis lukket, fold ud ud fra tekstens højde
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+}
 // Dropdown menu
 function toggleMenu() {
-    let getMenu = document.querySelector('.nav-list');
+    let getMenu = document.querySelector('#navDropdown');
+    let getIcon = document.querySelector('#burgerMenuIcon');
+
     getMenu.classList.toggle('show');
+
+    if (getMenu.classList.contains('show')) {
+        getIcon.classList.remove('fa-bars');
+        getIcon.classList.add('fa-xmark');
+    } else {
+        getIcon.classList.remove('fa-xmark');
+        getIcon.classList.add('fa-bars');
+    }
 }
 
-let getBurgerMenu = document.querySelector("#burgerMenuIcon");
-getBurgerMenu.addEventListener('click', toggleMenu);
+function closeMenu() {
+    let getMenu = document.querySelector('#navDropdown');
+    let getIcon = document.querySelector('#burgerMenuIcon');
 
+    if (getMenu) {
+        getMenu.classList.remove('show');
+    }
+    if (getIcon) {
+        getIcon.classList.remove('fa-xmark');
+        getIcon.classList.add('fa-bars');
+    }
+}
 
+let getBurgerMenu = document.querySelector(".burgerMenuLabel");
+if (getBurgerMenu) {
+    getBurgerMenu.addEventListener('click', function (event) {
+        event.stopPropagation(); // Stopper klikket i at nå frem til vores document.addEventListener 
+        toggleMenu();
+    });
+}
+
+// Luk menuen hvis man klikker uden for den
+document.addEventListener('click', function (event) {
+    let getMenu = document.querySelector('#navDropdown');
+    let getBurgerMenu = document.querySelector(".burgerMenuLabel");
+
+    document.addEventListener('click', (event) => {
+        // Hvis klikket ikke er inde i menuen eller på burger-ikonet, lukker vi den
+
+        if (getMenu && !getMenu.contains(event.target) && getBurgerMenu && !getBurgerMenu.contains(event.target)) {
+
+            closeMenu();
+        }
+    })  
+});
+
+// FAQ 
 
 
 // musik program 
