@@ -615,6 +615,28 @@ footer {
 
 }
 
+/* Mad og Drikke */
+.mad-vaelger a i {
+    margin-right: 8px;
+}
+
+.spisested h2 {
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    grid-column: 1fr;
+}
+
+.baren h2 {
+    font-size: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
 /* PROGRAMMER */
 nav.programDropdown {
     display: grid;
@@ -648,8 +670,9 @@ nav.programDropdown {
     background-color: var(--brun);
 }
 
-
-div.program {
+div.program,
+div.spisested,
+div.baren {
     height: 200px;
     display: flex;
     align-items: flex-start;
@@ -707,7 +730,8 @@ div.program {
 
 /* tidsplan */
 
-.vaelger {
+.vaelger,
+.mad-vaelger {
     display: flex;
     margin-top: 80px;
 
@@ -754,7 +778,7 @@ a.valgtSide {
     position: absolute;
     width: 100%;
     left: 0;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .menu.synlig {
@@ -792,6 +816,11 @@ a.valgtSide {
     color: var(--gul);
 }
 
+.menuItem[data-value="spisestederogbarer"] {
+    background-color: var(--mørkegrøn);
+    color: var(--gul);
+}
+
 .dropdownKnap.musik {
     background-color: var(--pink);
 }
@@ -810,6 +839,11 @@ a.valgtSide {
 
 .dropdownKnap.alle {
     background-color: var(--lysbrun);
+}
+
+/* Favoritter */
+#favoritter .programDropdown {
+    margin-top: 80px;
 }
 
 
@@ -1002,11 +1036,20 @@ a.valgtSide {
 }
 
 /* FAQ Accordion */
+#handicap,
+#camping,
+#node,
+#billet,
+#bus,
+#lås {
+    transform: none;
+}
+
 .faqMain {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 3rem;
     background-color: transparent;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .faqHeadline {
@@ -1014,7 +1057,6 @@ a.valgtSide {
     color: var(--brun);
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    padding-top: 2rem;
 }
 
 .faqContainer {
