@@ -816,7 +816,7 @@ a.valgtSide {
     color: var(--gul);
 }
 
-.menuItem[data-value="spisestederogbarer"] {
+.menuItem[data-value="madogdrik"] {
     background-color: var(--mørkegrøn);
     color: var(--gul);
 }
@@ -835,10 +835,16 @@ a.valgtSide {
 
 .dropdownKnap.andet {
     background-color: var(--mosgrøn);
+    color: var(--gul);
 }
 
 .dropdownKnap.alle {
     background-color: var(--lysbrun);
+}
+
+.dropdownKnap.madogdrik {
+    background-color: var(--mørkegrøn);
+    color: var(--gul);
 }
 
 /* Favoritter */

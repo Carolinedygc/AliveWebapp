@@ -713,6 +713,7 @@ const kategoriLabels = {
     udflugter: "Udflugter",
     kunst: "Kunst",
     andet: "Andet",
+    madogdrik: "Spisesteder og barer"
 };
 
 let valgt = "alle";
@@ -744,7 +745,7 @@ document.querySelectorAll(".menuItem").forEach((item) => {
 
         // Opdater tekst og farve på knappen, ved at skifte klassen
         valgtLabel.textContent = kategoriLabels[valgt];
-        knap.classList.remove("alle", "musik", "udflugter", "kunst", "andet");
+        knap.classList.remove("alle", "musik", "udflugter", "kunst", "andet", "madogdrik");
         knap.classList.add(valgt);
 
         // Luk menu
@@ -756,7 +757,7 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             ? kunstnere
             : kunstnere.filter(k => k.kategori === valgt);
 
-        // Ryd listen og vis de filtrerede kunstnere
+        // Ryd listen og vis de filtrerede kunstnere, spisesteder og barer
         programEl.innerHTML = '';
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
@@ -840,6 +841,48 @@ if (favoritEl) {
         `;
         favoritEl.appendChild(card);
     });
+}
+
+// Favoritter - spisesteder
+const favoritMadEl = document.querySelector('.favoritter');
+
+if (favoritMadEl) {
+    const gemtMad = localStorage.getItem('madogDrikke');
+    const madogDrikke = JSON.parse(gemtMad);
+
+    if (madogDrikke) {
+        const favoritMad = madogDrikke.filter(m => m.favorit === true);
+
+        favoritMad.forEach(mad => {
+            const card = document.createElement('div');
+            card.classList.add('spisested');
+            card.innerHTML = `
+                <img src="${mad.billede}" alt="${mad.navn}">
+                <h2>${mad.navn}</h2>
+                <i class="fa-solid fa-heart" data-navn="${mad.navn}"></i>
+            `;
+            favoritMadEl.appendChild(card);
+        });
+    }
+
+    // Favoritter - barer
+    const gemtBarer = localStorage.getItem('barer');
+    const barer = JSON.parse(gemtBarer);
+
+    if (barer) {
+        const favoritBarer = barer.filter(b => b.favorit === true);
+
+        favoritBarer.forEach(bar => {
+            const card = document.createElement('div');
+            card.classList.add('baren');
+            card.innerHTML = `
+                <img src="${bar.billede}" alt="${bar.navn}">
+                <h2>${bar.navn}</h2>
+                <i class="fa-solid fa-heart" data-navn="${bar.navn}"></i>
+            `;
+            favoritMadEl.appendChild(card);
+        });
+    }
 }
 
 // BILLETTER
