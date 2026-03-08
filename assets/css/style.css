@@ -1129,3 +1129,125 @@ a.valgtSide {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+
+/* DETAILS PAGES (Kunstner, Udflugter, Andet) */
+.detailsMain {
+    margin-top: 80px;
+    padding-bottom: 120px;
+    /* øget for at forhindre overlap af footer logo */
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.backLink {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--brun);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.backLink i {
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.heroImageContainer {
+    width: 100%;
+}
+
+.heroImageContainer img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.titleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 2rem 0.5rem;
+}
+
+.titleRow h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--brun);
+    line-height: 1.1;
+    max-width: 60%;
+}
+
+.titleRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.titleRight .icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    color: var(--brun);
+}
+
+.buyTicketBtn {
+    background-color: var(--pink);
+    color: var(--brun);
+    border: 1px solid var(--brun);
+    padding: 0.4rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 2px 2px 0px var(--brun);
+    display: inline-block;
+}
+
+.description {
+    padding: 1rem 2rem;
+    color: var(--brun);
+    font-size: 0.95rem;
+}
+
+.spotifyPlayer {
+    padding: 1rem 2rem;
+}
+
+.infoBox {
+    margin: 1.5rem 2rem 4rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    color: var(--brun);
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.infoBox h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.infoRow .label {
+    color: var(--brun);
+    font-weight: 600;
+}
+
+.infoRow .value {
+    color: var(--brun);
+    text-align: right;
+}
