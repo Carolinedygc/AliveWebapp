@@ -835,6 +835,7 @@ a.valgtSide {
 
 .dropdownKnap.andet {
     background-color: var(--mosgrøn);
+    color: var(--gul);
 }
 
 .dropdownKnap.alle {
