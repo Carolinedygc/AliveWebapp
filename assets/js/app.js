@@ -699,13 +699,14 @@ if (programEl) {
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>s
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
     `;
 
         // favorit knap
@@ -783,13 +784,14 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
             `;
             programEl.appendChild(card);
         });
@@ -824,13 +826,14 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-    <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
             `;
             programEl.appendChild(card);
         });
@@ -909,64 +912,91 @@ if (favoritMadEl) {
 
 // BILLETTER
 
-document.querySelector('.festivalBtn').addEventListener('click', () => {
-    document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
-});
+const festivalBtn = document.querySelector('.festivalBtn');
+if (festivalBtn) {
+    festivalBtn.addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.campingBtn').addEventListener('click', () => {
-    document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
-});
 
-document.querySelector('.udstyrBtn').addEventListener('click', () => {
-    document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.festivalBtn').addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.transportBtn').addEventListener('click', () => {
-    document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.campingBtn').addEventListener('click', () => {
+        document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.udflugterBtn').addEventListener('click', () => {
-    document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.udstyrBtn').addEventListener('click', () => {
+        document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.transportBtn').addEventListener('click', () => {
+        document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.udflugterBtn').addEventListener('click', () => {
+        document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
+    });
+}
 
 
 // NYHEDER
 
 const nyheder = [
     {
-        img:,
+        img: "BILLETSVINDEL.webp",
         dato: "23. Juli 2025",
         overskrift: "Pas på falske billetter – køb altid gennem officielle kanaler",
         tekst: "Vi har desværre modtaget henvendelser om personer, der er blevet snydt i forbindelse med billetkøb til Alive Festival 2025. Det er vi rigtig ærgerlige over, og vi vil derfor gøre opmærksom på, at der i øjeblikket florerer svindel med videresalg af billetter. Vi kan desværre ikke hjælpe, hvis du har købt billet via andre kanaler ",
     }, {
-        img:,
+        img: "OPBYGNING.webp",
         dato: "23. Juli 2025",
         overskrift: "Opbygningen er i fuld gang!",
         tekst: "Vores frivillige knokler med lynets hast for at forvandle Christianshave til Alive Festival 2025. Der bliver bygget, hygget og flyttet i bedste Alive-ånd – i morgen går det løs, og vi glæder os helt vildt! Det er sidste chance for at købe partoutbillet og få den fulde festivaloplevelse.",
     }, {
-        img:,
+        img: "silent_disco_forside.webp",
         dato: "15. Juli 2025",
         overskrift: "Silent Disco på Alive Festival 2025",
         tekst: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne – nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar til at danse hele natten lang.",
     }, {
-        img:,
+        img: "billetter-nyheder.webp",
         dato: "5. Juni 2025",
         overskrift: "Få partoutbilletter tilbage til Alive Festival 2025!",
         tekst: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til ",
     }, {
-        img:,
+        img: "KIRKEKONCERTER.webp",
         dato: "30. maj 2025",
         overskrift: "Alive Festival løfter sløret for årets kirkekoncerter",
         tekst: "Alive Festival offentliggør tre navne til kirkekoncerterne på årets festival. Kirkekoncerterne er et unikt format, hvor gæsterne får mulighed for særlige musikalske oplevelser i rammer, der indbyder til ro og eftertænksomhed. Formatet blev introduceret i 2022 og har siden udviklet sig til en central del af Alive-programmet. ",
     }, {
-        img:,
+        img: "nye-musiknavne-nyhed.webp",
         dato: "14. marts 2025",
         overskrift: "Fem nye musiknavne til festivalplakaten!",
         tekst: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem – og resten af programmet med kunst, musik og udflugter – under ‘Program’.",
     }, {
-        img:,
+        img: "FRIVILLIGTILMEDLING.webp",
         dato: "3. marts 2025",
         overskrift: "Frivilligtilmeldingen er åben",
         tekst: "Der er mange måder at opleve Alive Festival på. En af dem er at være en del af det fantastiske frivillighold omkring festivalen. Hop ind og læs mere om, hvordan du bliver frivillig til årets festival på siden ‘Bliv frivillig’.",
     }
 ]
+
+// fang .alleNyheder i HTML
+const nyhedsEl = document.querySelector('.alleNyheder');
+
+if (nyhedsEl) {
+    nyhedsEl.innerHTML = '';
+    // Løb igennem hvert nyheds-objekt i arrayet
+    nyheder.forEach(nyhed => {
+        const card = document.createElement('div');
+        card.classList.add('nyhed');
+        card.innerHTML = `
+            <img src="./assets/img/${nyhed.img}">
+            <p class="dato">${nyhed.dato}</p>
+            <h2>${nyhed.overskrift}</h2>
+                <p class="tekst">${nyhed.tekst}</p>
+    `;
+        nyhedsEl.appendChild(card);
+    })
+}

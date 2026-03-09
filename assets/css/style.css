@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'GT Haptik';
+    src: url(../FONTS/GTHaptikRegular.woff2);
+}
+
 /*  General styling*/
 body {
     margin: 0;
@@ -18,7 +23,7 @@ body {
     --greenthy: #C6FEC0;
     /* font */
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'GT Haptik', sans-serif;
 
     line-height: 1.5;
 }
@@ -27,6 +32,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 h1,
 h2,
 h3,
@@ -34,6 +40,7 @@ h4,
 h5,
 h6 {
     color: var(--brun);
+    text-transform: uppercase;
 }
 
 /* HEADER */
@@ -652,6 +659,13 @@ nav.programDropdown {
 
 }
 
+.programmer {
+    a {
+        text-decoration: none;
+        color: var(--brun);
+    }
+}
+
 nav.programDage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1018,10 +1032,21 @@ a.valgtSide {
     text-align: center;
 }
 
+
+.alleNyheder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
 .nyhed {
-    padding: 0 2rem 2rem 2rem;
     border-radius: 20px;
-    box-shadow: #422d27;
+    box-shadow: 0 4px 12px #422d27;
+    overflow: hidden;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
 
     img {
         width: 100%;
@@ -1033,11 +1058,14 @@ a.valgtSide {
         display: flex;
         text-align: start;
         color: grey;
+        padding: 1rem 2rem 1rem 2rem;
 
     }
 
-    h3 {
+    p,
+    h2 {
         margin: 0;
+        padding: 0 2rem 2rem 2rem;
     }
 }
 
