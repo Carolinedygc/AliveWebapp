@@ -699,13 +699,14 @@ if (programEl) {
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>s
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
     `;
 
         // favorit knap
@@ -783,13 +784,14 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
             `;
             programEl.appendChild(card);
         });
@@ -824,13 +826,14 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
             const card = document.createElement('div');
             card.classList.add('program');
             card.innerHTML = `
+        <a href="./kunstner.html">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-    <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
             `;
             programEl.appendChild(card);
         });
