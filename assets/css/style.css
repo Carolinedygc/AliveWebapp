@@ -1141,7 +1141,7 @@ a.valgtSide {
 /* DETAILS PAGES (Kunstner, Udflugter, Andet) */
 .detailsMain {
     margin-top: 80px;
-    padding-bottom: 120px;
+    padding-bottom: 30px;
     /* øget for at forhindre overlap af footer logo */
     background-color: #fff;
     min-height: 100vh;
