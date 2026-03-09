@@ -988,7 +988,7 @@ const nyhedsEl = document.querySelector('.alleNyheder');
 if (nyhedsEl) {
     nyhedsEl.innerHTML = '';
     // Løb igennem hvert nyheds-objekt i arrayet
-    nyheder.forEach(nyhed, index => {
+    nyheder.forEach(nyhed => {
         const card = document.createElement('div');
         card.classList.add('nyhed');
         card.innerHTML = `
