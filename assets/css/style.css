@@ -1018,10 +1018,21 @@ a.valgtSide {
     text-align: center;
 }
 
+
+.alleNyheder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
 .nyhed {
-    padding: 0 2rem 2rem 2rem;
     border-radius: 20px;
-    box-shadow: #422d27;
+    box-shadow: 0 4px 12px #422d27;
+    overflow: hidden;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
 
     img {
         width: 100%;
@@ -1033,11 +1044,14 @@ a.valgtSide {
         display: flex;
         text-align: start;
         color: grey;
+        padding: 1rem 2rem 1rem 2rem;
 
     }
 
-    h3 {
+    p,
+    h2 {
         margin: 0;
+        padding: 0 2rem 2rem 2rem;
     }
 }
 

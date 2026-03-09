@@ -909,32 +909,40 @@ if (favoritMadEl) {
 
 // BILLETTER
 
-document.querySelector('.festivalBtn').addEventListener('click', () => {
-    document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
-});
+const festivalBtn = document.querySelector('.festivalBtn');
+if (festivalBtn) {
+    festivalBtn.addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.campingBtn').addEventListener('click', () => {
-    document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
-});
 
-document.querySelector('.udstyrBtn').addEventListener('click', () => {
-    document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.festivalBtn').addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.transportBtn').addEventListener('click', () => {
-    document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.campingBtn').addEventListener('click', () => {
+        document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.udflugterBtn').addEventListener('click', () => {
-    document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.udstyrBtn').addEventListener('click', () => {
+        document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.transportBtn').addEventListener('click', () => {
+        document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.udflugterBtn').addEventListener('click', () => {
+        document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
+    });
+}
 
 
 // NYHEDER
 
 const nyheder = [
     {
-        img:,
+        img: "BILLETSVINDEL.webp",
         dato: "23. Juli 2025",
         overskrift: "Pas på falske billetter – køb altid gennem officielle kanaler",
         tekst: "Vi har desværre modtaget henvendelser om personer, der er blevet snydt i forbindelse med billetkøb til Alive Festival 2025. Det er vi rigtig ærgerlige over, og vi vil derfor gøre opmærksom på, at der i øjeblikket florerer svindel med videresalg af billetter. Vi kan desværre ikke hjælpe, hvis du har købt billet via andre kanaler ",
@@ -981,12 +989,10 @@ if (nyhedsEl) {
         const card = document.createElement('div');
         card.classList.add('nyhed');
         card.innerHTML = `
-        <div class="nyhed">
-            <img src="./assets/img/${nyheder.img}">
-            <p class="dato">${nyheder.dato}</p>
-            <h2>${nyheder.overskrift}</h2>
-                <p class="tekst">${nyheder.tekst}</p>
-        </div>
+            <img src="./assets/img/${nyhed.img}">
+            <p class="dato">${nyhed.dato}</p>
+            <h2>${nyhed.overskrift}</h2>
+                <p class="tekst">${nyhed.tekst}</p>
     `;
         nyhedsEl.appendChild(card);
     })
