@@ -226,6 +226,15 @@ const madogDrikke = [
     }
 ]
 
+const gemtMad = localStorage.getItem('madogDrikke');
+if (gemtMad) {
+    const gemteMad = JSON.parse(gemtMad);
+    madogDrikke.forEach(m => {
+        const match = gemteMad.find(g => g.navn === m.navn);
+        if (match) m.favorit = match.favorit;
+    });
+}
+
 //Fanger .spisesteder-wrap i HTML'en
 const spisestederEl = document.querySelector('.spisesteder-wrap');
 
@@ -239,7 +248,7 @@ if (spisestederEl) {
         card.innerHTML = `
         <img src="${madbod.billede}" alt="billede af ${madbod.navn}">
         <h2>${madbod.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${madbod.navn}"></i>
+        <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${madbod.navn}"></i>
         `;
 
         // Føj til favoritter
@@ -249,7 +258,7 @@ if (spisestederEl) {
 
             const spisestedObj = madogDrikke.find(m => m.navn === e.target.dataset.navn);
             spisestedObj.favorit = !spisestedObj.favorit;
-            localStorage.setItem('madogDrikke', JSON.stringify(madogDrikke));
+
         });
 
         spisestederEl.appendChild(card);
@@ -296,6 +305,15 @@ const barer = [
     }
 ]
 
+
+const gemtBarer = localStorage.getItem('barer');
+if (gemtBarer) {
+    const gemteBarer = JSON.parse(gemtBarer);
+    barer.forEach(b => {
+        const match = gemteBarer.find(g => g.navn === b.navn);
+        if (match) b.favorit = match.favorit;
+    });
+}
 const barerEl = document.querySelector('.barer-wrap');
 
 if (barerEl) {
@@ -308,7 +326,7 @@ if (barerEl) {
         card.innerHTML = `
         <img src="${bar.billede}" alt="${bar.navn}">
         <h2>${bar.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${bar.navn}"></i>
+       <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${bar.navn}"></i>
         `
 
         card.querySelector('i').addEventListener('click', (e) => {
@@ -317,7 +335,6 @@ if (barerEl) {
 
             const barObj = barer.find(b => b.navn === e.target.dataset.navn);
             barObj.favorit = !barObj.favorit;
-            localStorage.setItem('barer', JSON.stringify(barer));
 
         });
 
@@ -657,6 +674,16 @@ const kunstnere = [
     },
 ]
 
+// Hent gemt favorit-status fra localStorage
+const gemt = localStorage.getItem('kunstnere');
+if (gemt) {
+    const gemteKunstnere = JSON.parse(gemt);
+    kunstnere.forEach(k => {
+        const match = gemteKunstnere.find(g => g.navn === k.navn);
+        if (match) k.favorit = match.favorit;
+    });
+}
+
 // fang .programmer i HTML
 const programEl = document.querySelector('.programmer');
 // Tøm containeren
@@ -678,7 +705,7 @@ if (programEl) {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>s
     `;
 
         // favorit knap
@@ -762,7 +789,7 @@ document.querySelectorAll(".menuItem").forEach((item) => {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -803,7 +830,7 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart"></i>
+    <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -830,7 +857,7 @@ if (favoritEl) {
                 <p>${kunstner.scene}</p>
                 <p>${kunstner.tid}</p>
             </div>
-            <i class="fa-solid fa-heart data-navn="${kunstner.navn}"></i>
+            <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
         `;
         favoritEl.appendChild(card);
     });
@@ -878,6 +905,8 @@ if (favoritMadEl) {
     }
 }
 
+
+
 // BILLETTER
 
 document.querySelector('.festivalBtn').addEventListener('click', () => {
@@ -899,3 +928,45 @@ document.querySelector('.transportBtn').addEventListener('click', () => {
 document.querySelector('.udflugterBtn').addEventListener('click', () => {
     document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
 });
+
+
+// NYHEDER
+
+const nyheder = [
+    {
+        img:,
+        dato: "23. Juli 2025",
+        overskrift: "Pas på falske billetter – køb altid gennem officielle kanaler",
+        tekst: "Vi har desværre modtaget henvendelser om personer, der er blevet snydt i forbindelse med billetkøb til Alive Festival 2025. Det er vi rigtig ærgerlige over, og vi vil derfor gøre opmærksom på, at der i øjeblikket florerer svindel med videresalg af billetter. Vi kan desværre ikke hjælpe, hvis du har købt billet via andre kanaler ",
+    }, {
+        img:,
+        dato: "23. Juli 2025",
+        overskrift: "Opbygningen er i fuld gang!",
+        tekst: "Vores frivillige knokler med lynets hast for at forvandle Christianshave til Alive Festival 2025. Der bliver bygget, hygget og flyttet i bedste Alive-ånd – i morgen går det løs, og vi glæder os helt vildt! Det er sidste chance for at købe partoutbillet og få den fulde festivaloplevelse.",
+    }, {
+        img:,
+        dato: "15. Juli 2025",
+        overskrift: "Silent Disco på Alive Festival 2025",
+        tekst: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne – nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar til at danse hele natten lang.",
+    }, {
+        img:,
+        dato: "5. Juni 2025",
+        overskrift: "Få partoutbilletter tilbage til Alive Festival 2025!",
+        tekst: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til ",
+    }, {
+        img:,
+        dato: "30. maj 2025",
+        overskrift: "Alive Festival løfter sløret for årets kirkekoncerter",
+        tekst: "Alive Festival offentliggør tre navne til kirkekoncerterne på årets festival. Kirkekoncerterne er et unikt format, hvor gæsterne får mulighed for særlige musikalske oplevelser i rammer, der indbyder til ro og eftertænksomhed. Formatet blev introduceret i 2022 og har siden udviklet sig til en central del af Alive-programmet. ",
+    }, {
+        img:,
+        dato: "14. marts 2025",
+        overskrift: "Fem nye musiknavne til festivalplakaten!",
+        tekst: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem – og resten af programmet med kunst, musik og udflugter – under ‘Program’.",
+    }, {
+        img:,
+        dato: "3. marts 2025",
+        overskrift: "Frivilligtilmeldingen er åben",
+        tekst: "Der er mange måder at opleve Alive Festival på. En af dem er at være en del af det fantastiske frivillighold omkring festivalen. Hop ind og læs mere om, hvordan du bliver frivillig til årets festival på siden ‘Bliv frivillig’.",
+    }
+]
