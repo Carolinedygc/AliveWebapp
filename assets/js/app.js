@@ -226,6 +226,15 @@ const madogDrikke = [
     }
 ]
 
+const gemtMad = localStorage.getItem('madogDrikke');
+if (gemtMad) {
+    const gemteMad = JSON.parse(gemtMad);
+    madogDrikke.forEach(m => {
+        const match = gemteMad.find(g => g.navn === m.navn);
+        if (match) m.favorit = match.favorit;
+    });
+}
+
 //Fanger .spisesteder-wrap i HTML'en
 const spisestederEl = document.querySelector('.spisesteder-wrap');
 
@@ -239,7 +248,7 @@ if (spisestederEl) {
         card.innerHTML = `
         <img src="${madbod.billede}" alt="billede af ${madbod.navn}">
         <h2>${madbod.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${madbod.navn}"></i>
+        <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${madbod.navn}"></i>
         `;
 
         // Føj til favoritter
@@ -249,7 +258,7 @@ if (spisestederEl) {
 
             const spisestedObj = madogDrikke.find(m => m.navn === e.target.dataset.navn);
             spisestedObj.favorit = !spisestedObj.favorit;
-            localStorage.setItem('madogDrikke', JSON.stringify(madogDrikke));
+
         });
 
         spisestederEl.appendChild(card);
@@ -296,6 +305,15 @@ const barer = [
     }
 ]
 
+
+const gemtBarer = localStorage.getItem('barer');
+if (gemtBarer) {
+    const gemteBarer = JSON.parse(gemtBarer);
+    barer.forEach(b => {
+        const match = gemteBarer.find(g => g.navn === b.navn);
+        if (match) b.favorit = match.favorit;
+    });
+}
 const barerEl = document.querySelector('.barer-wrap');
 
 if (barerEl) {
@@ -308,7 +326,7 @@ if (barerEl) {
         card.innerHTML = `
         <img src="${bar.billede}" alt="${bar.navn}">
         <h2>${bar.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${bar.navn}"></i>
+       <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${bar.navn}"></i>
         `
 
         card.querySelector('i').addEventListener('click', (e) => {
@@ -317,7 +335,6 @@ if (barerEl) {
 
             const barObj = barer.find(b => b.navn === e.target.dataset.navn);
             barObj.favorit = !barObj.favorit;
-            localStorage.setItem('barer', JSON.stringify(barer));
 
         });
 
@@ -657,6 +674,16 @@ const kunstnere = [
     },
 ]
 
+// Hent gemt favorit-status fra localStorage
+const gemt = localStorage.getItem('kunstnere');
+if (gemt) {
+    const gemteKunstnere = JSON.parse(gemt);
+    kunstnere.forEach(k => {
+        const match = gemteKunstnere.find(g => g.navn === k.navn);
+        if (match) k.favorit = match.favorit;
+    });
+}
+
 // fang .programmer i HTML
 const programEl = document.querySelector('.programmer');
 // Tøm containeren
@@ -678,7 +705,7 @@ if (programEl) {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>s
     `;
 
         // favorit knap
@@ -762,7 +789,7 @@ document.querySelectorAll(".menuItem").forEach((item) => {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -803,7 +830,7 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart"></i>
+    <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -830,7 +857,7 @@ if (favoritEl) {
                 <p>${kunstner.scene}</p>
                 <p>${kunstner.tid}</p>
             </div>
-            <i class="fa-solid fa-heart data-navn="${kunstner.navn}"></i>
+            <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
         `;
         favoritEl.appendChild(card);
     });
