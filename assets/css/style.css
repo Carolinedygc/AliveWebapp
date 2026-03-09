@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'GT Haptik';
+    src: url(../FONTS/GTHaptikRegular.woff2);
+}
+
 /*  General styling*/
 body {
     margin: 0;
@@ -18,7 +23,7 @@ body {
     --greenthy: #C6FEC0;
     /* font */
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'GT Haptik', sans-serif;
 
     line-height: 1.5;
 }
