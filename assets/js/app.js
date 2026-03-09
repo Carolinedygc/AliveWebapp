@@ -326,7 +326,7 @@ if (barerEl) {
         card.innerHTML = `
         <img src="${bar.billede}" alt="${bar.navn}">
         <h2>${bar.navn}</h2>
-       <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${bar.navn}"></i>
+       <i class="${bar.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${bar.navn}"></i>
         `
 
         card.querySelector('i').addEventListener('click', (e) => {
@@ -889,7 +889,7 @@ if (favoritMadEl) {
     }
 
     // Favoritter - barer
-    const gemtBarer = localStorage.getItem('barer');
+    const gemtBarer = localStorage.getItem('barer-wrap');
     const barer = JSON.parse(gemtBarer);
 
     if (barer) {
@@ -988,7 +988,7 @@ const nyhedsEl = document.querySelector('.alleNyheder');
 if (nyhedsEl) {
     nyhedsEl.innerHTML = '';
     // Løb igennem hvert nyheds-objekt i arrayet
-    nyheder.forEach(nyhed => {
+    nyheder.forEach(nyhed, index => {
         const card = document.createElement('div');
         card.classList.add('nyhed');
         card.innerHTML = `
