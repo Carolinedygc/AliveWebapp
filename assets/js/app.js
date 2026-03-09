@@ -957,7 +957,7 @@ const nyheder = [
         overskrift: "Silent Disco på Alive Festival 2025",
         tekst: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne – nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar til at danse hele natten lang.",
     }, {
-        img: "biletter-nyheder.webp",
+        img: "billetter-nyheder.webp",
         dato: "5. Juni 2025",
         overskrift: "Få partoutbilletter tilbage til Alive Festival 2025!",
         tekst: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til ",
@@ -972,7 +972,7 @@ const nyheder = [
         overskrift: "Fem nye musiknavne til festivalplakaten!",
         tekst: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem – og resten af programmet med kunst, musik og udflugter – under ‘Program’.",
     }, {
-        img: "FRIVILLIGTILMELDING.webp",
+        img: "FRIVILLIGTILMEDLING.webp",
         dato: "3. marts 2025",
         overskrift: "Frivilligtilmeldingen er åben",
         tekst: "Der er mange måder at opleve Alive Festival på. En af dem er at være en del af det fantastiske frivillighold omkring festivalen. Hop ind og læs mere om, hvordan du bliver frivillig til årets festival på siden ‘Bliv frivillig’.",
