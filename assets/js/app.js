@@ -359,7 +359,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ORA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
 
     },
     {
@@ -369,7 +370,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "UDENORD.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Fællessang",
@@ -378,7 +380,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "FAELLESSANG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Elias Rønnenfeldt",
@@ -387,7 +390,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ELIAS.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Enes",
@@ -396,7 +400,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ENES.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Brimheim",
@@ -405,7 +410,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "BRIMHEIM.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Faza",
@@ -414,7 +420,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "FAZA.webp",
-        favorit: false
+        favorit: false,
+        link: "kunstner.html"
     },
     {
         navn: "Emma Sehested Høeg",
@@ -423,7 +430,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "EMMASEHESTEDHØEG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     //   fredag
@@ -434,7 +442,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "KAROLINE.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Bette",
@@ -443,7 +452,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "BETTE.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Østen",
@@ -452,7 +462,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "OESTEN.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Baest",
@@ -461,7 +472,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "BAEST.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Dayyani",
@@ -470,7 +482,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "DAYYANI.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "School of X",
@@ -479,7 +492,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "SCHOOLOFX.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Paydar",
@@ -488,7 +502,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "PAYDAR.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     // Lørdag
@@ -499,7 +514,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "LEA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Tamara Mneney",
@@ -508,7 +524,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "TAMRARAMNENEY.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Mekdes",
@@ -517,7 +534,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "MEKDES.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Von Quar",
@@ -526,7 +544,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "VONQUAR.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Def Mama Def",
@@ -535,7 +554,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "DEFMAMADEF.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "100% WET",
@@ -544,7 +564,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "100WET.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Kind mod kind",
@@ -553,7 +574,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "KINDMODKIND.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Tacobitch",
@@ -562,7 +584,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "TACOBITCH.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     //   Kunst
@@ -573,7 +596,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "BJOERG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Traad for traad",
@@ -582,7 +606,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "TRAADFORTRAAD.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Werk",
@@ -591,7 +616,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "WERK.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Solvej Mia",
@@ -600,15 +626,17 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "SOLVEJMIA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     }, {
         navn: "UngKunstThy",
         scene: "",
         tid: "18:30",
         dag: "lørdag",
         kategori: "kunst",
-        billede: "SOLVEJMIA.webp",
-        favorit: false
+        billede: "UNGKUNSTTHY.webp",
+        favorit: false,
+        link: "program.html"
     },
 
     // udflugter
@@ -619,7 +647,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "THISTEDBRYGHUS.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Morgendyb i Limfjorden",
@@ -628,7 +657,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "morgendyp_favorit.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Thy whiskey på Gyrup gård",
@@ -637,7 +667,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "THYWHISKY.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "'Kærestebreve fra thy' i Agger bio",
@@ -646,7 +677,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "AGGERBIO.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Surfskole",
@@ -655,7 +687,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "surfskole.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Det nordatlantiske fyr i Hanstholm",
@@ -664,7 +697,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: ".webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     //   Andet
     {
@@ -674,7 +708,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "andet",
         billede: "SEXOGSAMFUND.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Silent disco",
@@ -683,7 +718,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "andet",
         billede: "SILENTDISCO.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 ]
 
@@ -710,14 +746,14 @@ if (programEl) {
         // Giv div'en klassen "program"
         card.classList.add('program');
 
-        let link = "./kunstner.html";
-        if (kunstner.kategori === "kunst") link = "./kunst.html";
-        else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
-        else if (kunstner.kategori === "andet") link = "./andet.html";
+        // let link = "./kunstner.html";
+        // if (kunstner.kategori === "kunst") link = "./kunst.html";
+        // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+        // else if (kunstner.kategori === "andet") link = "./andet.html";
 
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
-        <a href="${link}">
+        <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -802,13 +838,13 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             const card = document.createElement('div');
             card.classList.add('program');
 
-            let link = "./kunstner.html";
-            if (kunstner.kategori === "kunst") link = "./kunst.html";
-            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
-            else if (kunstner.kategori === "andet") link = "./andet.html";
+            // let link = "./kunstner.html";
+            // if (kunstner.kategori === "kunst") link = "./kunst.html";
+            // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            // else if (kunstner.kategori === "andet") link = "./andet.html";
 
             card.innerHTML = `
-        <a href="${link}">
+    <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -850,13 +886,13 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
             const card = document.createElement('div');
             card.classList.add('program');
 
-            let link = "./kunstner.html";
-            if (kunstner.kategori === "kunst") link = "./kunst.html";
-            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
-            else if (kunstner.kategori === "andet") link = "./andet.html";
+            // let link = "./kunstner.html";
+            // if (kunstner.kategori === "kunst") link = "./kunst.html";
+            // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            // else if (kunstner.kategori === "andet") link = "./andet.html";
 
             card.innerHTML = `
-        <a href="${link}">
+     <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
