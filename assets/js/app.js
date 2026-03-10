@@ -589,7 +589,7 @@ const kunstnere = [
         scene: "",
         tid: "16:00",
         dag: "fredag",
-        kategori: "kusnt",
+        kategori: "kunst",
         billede: "WERK.webp",
         favorit: false
     },
@@ -598,6 +598,14 @@ const kunstnere = [
         scene: "",
         tid: "Hele dagen",
         dag: "fredag",
+        kategori: "kunst",
+        billede: "SOLVEJMIA.webp",
+        favorit: false
+    }, {
+        navn: "UngKunstThy",
+        scene: "",
+        tid: "18:30",
+        dag: "lørdag",
         kategori: "kunst",
         billede: "SOLVEJMIA.webp",
         favorit: false
@@ -702,9 +710,14 @@ if (programEl) {
         // Giv div'en klassen "program"
         card.classList.add('program');
 
+        let link = "./kunstner.html";
+        if (kunstner.kategori === "kunst") link = "./kunst.html";
+        else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+        else if (kunstner.kategori === "andet") link = "./andet.html";
+
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -788,8 +801,14 @@ document.querySelectorAll(".menuItem").forEach((item) => {
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            let link = "./kunstner.html";
+            if (kunstner.kategori === "kunst") link = "./kunst.html";
+            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -830,15 +849,21 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            let link = "./kunstner.html";
+            if (kunstner.kategori === "kunst") link = "./kunst.html";
+            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
-      </div>
-      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
+      </div></a>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -864,8 +889,8 @@ if (favoritEl) {
                 <h2>${kunstner.navn}</h2>
                 <p>${kunstner.scene}</p>
                 <p>${kunstner.tid}</p>
-            </div>
-            <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
+            </div></a>
+            <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}">
         `;
         favoritEl.appendChild(card);
     });
@@ -954,36 +979,43 @@ const nyheder = [
         dato: "23. Juli 2025",
         overskrift: "Pas på falske billetter – køb altid gennem officielle kanaler",
         tekst: "Vi har desværre modtaget henvendelser om personer, der er blevet snydt i forbindelse med billetkøb til Alive Festival 2025. Det er vi rigtig ærgerlige over, og vi vil derfor gøre opmærksom på, at der i øjeblikket florerer svindel med videresalg af billetter. Vi kan desværre ikke hjælpe, hvis du har købt billet via andre kanaler ",
+        id: "billetSvindel"
     }, {
         img: "OPBYGNING.webp",
         dato: "23. Juli 2025",
         overskrift: "Opbygningen er i fuld gang!",
         tekst: "Vores frivillige knokler med lynets hast for at forvandle Christianshave til Alive Festival 2025. Der bliver bygget, hygget og flyttet i bedste Alive-ånd – i morgen går det løs, og vi glæder os helt vildt! Det er sidste chance for at købe partoutbillet og få den fulde festivaloplevelse.",
+        id: "opbygning"
     }, {
         img: "silent_disco_forside.webp",
         dato: "15. Juli 2025",
         overskrift: "Silent Disco på Alive Festival 2025",
         tekst: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne – nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar til at danse hele natten lang.",
+        id: "silentDisco"
     }, {
         img: "billetter-nyheder.webp",
         dato: "5. Juni 2025",
         overskrift: "Få partoutbilletter tilbage til Alive Festival 2025!",
         tekst: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til ",
+        id: "billetter"
     }, {
         img: "KIRKEKONCERTER.webp",
         dato: "30. maj 2025",
         overskrift: "Alive Festival løfter sløret for årets kirkekoncerter",
         tekst: "Alive Festival offentliggør tre navne til kirkekoncerterne på årets festival. Kirkekoncerterne er et unikt format, hvor gæsterne får mulighed for særlige musikalske oplevelser i rammer, der indbyder til ro og eftertænksomhed. Formatet blev introduceret i 2022 og har siden udviklet sig til en central del af Alive-programmet. ",
+        id: "Kirkekoncert"
     }, {
         img: "nye-musiknavne-nyhed.webp",
         dato: "14. marts 2025",
         overskrift: "Fem nye musiknavne til festivalplakaten!",
         tekst: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem – og resten af programmet med kunst, musik og udflugter – under ‘Program’.",
+        id: "nyeNavne"
     }, {
         img: "FRIVILLIGTILMEDLING.webp",
         dato: "3. marts 2025",
         overskrift: "Frivilligtilmeldingen er åben",
         tekst: "Der er mange måder at opleve Alive Festival på. En af dem er at være en del af det fantastiske frivillighold omkring festivalen. Hop ind og læs mere om, hvordan du bliver frivillig til årets festival på siden ‘Bliv frivillig’.",
+        id: "frivillige"
     }
 ]
 
@@ -996,6 +1028,7 @@ if (nyhedsEl) {
     nyheder.forEach(nyhed => {
         const card = document.createElement('div');
         card.classList.add('nyhed');
+        card.id = nyhed.id;
         card.innerHTML = `
             <img src="./assets/img/${nyhed.img}">
             <p class="dato">${nyhed.dato}</p>
