@@ -1316,6 +1316,11 @@ a.valgtSide {
     border: 1px solid #ccc;
 }
 
+.program-wrapper {
+    overflow-x: auto;
+    min-height: 76vh;
+}
+
 /* tider */
 .time {
     grid-row: 1;
