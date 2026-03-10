@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'GT Haptik';
+    src: url(../FONTS/GTHaptikRegular.woff2);
+}
+
 /*  General styling*/
 body {
     margin: 0;
@@ -18,7 +23,7 @@ body {
     --greenthy: #C6FEC0;
     /* font */
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'GT Haptik', sans-serif;
 
     line-height: 1.5;
 }
@@ -27,6 +32,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 h1,
 h2,
 h3,
@@ -34,6 +40,7 @@ h4,
 h5,
 h6 {
     color: var(--brun);
+    text-transform: uppercase;
 }
 
 /* HEADER */
@@ -308,7 +315,7 @@ footer {
 }
 
 .cards-nyheder-forside {
-    padding: 1.5rem;
+    padding: 2rem;
     gap: 3rem;
     justify-items: center;
     display: grid;
@@ -316,9 +323,14 @@ footer {
 }
 
 .nyhed-forside {
-    width: min(100%, 336px);
+    width: 100%;
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5);
-    height: 600px;
+    height: 640px;
+}
+
+.nyhed-forside a {
+    text-decoration: none;
+    color: var(--brun);
 }
 
 
@@ -351,6 +363,7 @@ footer {
     padding: 0.5rem 1rem;
     background: var(--pink);
 }
+
 
 /* NYHEDSBREV - FORSIDE */
 
@@ -620,6 +633,10 @@ footer {
     margin-right: 8px;
 }
 
+.spisested:first-child h2 {
+    width: 10%;
+}
+
 .spisested h2 {
     font-size: 30px;
     position: absolute;
@@ -650,6 +667,13 @@ nav.programDropdown {
         color: var(--gul);
     }
 
+}
+
+.programmer {
+    a {
+        text-decoration: none;
+        color: var(--brun);
+    }
 }
 
 nav.programDage {
@@ -816,7 +840,7 @@ a.valgtSide {
     color: var(--gul);
 }
 
-.menuItem[data-value="spisestederogbarer"] {
+.menuItem[data-value="madogdrik"] {
     background-color: var(--mørkegrøn);
     color: var(--gul);
 }
@@ -840,6 +864,11 @@ a.valgtSide {
 
 .dropdownKnap.alle {
     background-color: var(--lysbrun);
+}
+
+.dropdownKnap.madogdrik {
+    background-color: var(--mørkegrøn);
+    color: var(--gul);
 }
 
 /* Favoritter */
@@ -872,7 +901,7 @@ a.valgtSide {
 }
 
 .intro-frivilligSide {
-    padding: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     margin: 0;
 }
 
@@ -1013,10 +1042,22 @@ a.valgtSide {
     text-align: center;
 }
 
+
+.alleNyheder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding-bottom: 80px;
+}
+
 .nyhed {
-    padding: 0 2rem 2rem 2rem;
     border-radius: 20px;
-    box-shadow: #422d27;
+    box-shadow: 0 4px 12px #422d27;
+    overflow: hidden;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
 
     img {
         width: 100%;
@@ -1028,29 +1069,33 @@ a.valgtSide {
         display: flex;
         text-align: start;
         color: grey;
+        padding: 1rem 2rem 1rem 2rem;
 
     }
 
-    h3 {
+    p,
+    h2 {
         margin: 0;
+        padding: 0 2rem 2rem 2rem;
     }
 }
 
 /* FAQ Accordion */
 #handicap,
-#camping,
 #node,
-#billet,
+#lås,
+#camping,
 #bus,
-#lås {
+#billet {
+    transition: none;
     transform: none;
 }
 
 .faqMain {
-    padding-top: 80px;
-    padding-bottom: 3rem;
+    padding-top: 100px;
+    padding-bottom: 50px;
     background-color: transparent;
-    min-height: 90vh;
+    min-height: 100vh;
 }
 
 .faqHeadline {
@@ -1058,6 +1103,7 @@ a.valgtSide {
     color: var(--brun);
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 .faqContainer {
@@ -1134,7 +1180,7 @@ a.valgtSide {
 /* DETAILS PAGES (Kunstner, Udflugter, Andet) */
 .detailsMain {
     margin-top: 80px;
-    padding-bottom: 120px;
+    padding-bottom: 30px;
     /* øget for at forhindre overlap af footer logo */
     background-color: #fff;
     min-height: 100vh;

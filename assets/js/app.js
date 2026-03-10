@@ -1,29 +1,22 @@
 // FAQ Accordion
 const accordionHeaders = document.querySelectorAll(".accordionHeader");
 
-if (accordionHeaders && accordionHeaders.length) {
+if (accordionHeaders) {
     accordionHeaders.forEach(header => {
         header.addEventListener("click", () => {
-            const currentContent = header.nextElementSibling;
-            const isOpen = currentContent.style.maxHeight;
+            // Skift active klasse på headeren
+            header.classList.toggle("active");
 
-            // Lukker hvis der er andre accordions der er åbent
-            accordionHeaders.forEach(other => {
-                if (other !== header) {
-                    other.classList.remove("active");
-                    const otherContent = other.nextElementSibling;
-                    if (otherContent) otherContent.style.maxHeight = null;
-                }
-            });
+            // Find indholdet til accordions
+            let content = header.nextElementSibling;
 
-            //Tjekker om noget er åbent
-            if (isOpen) {
-                // Hvis det er åben, så luk det
-                currentContent.style.maxHeight = null;
-
+            // Tjek om panelet er åbent
+            if (content.style.maxHeight) {
+                // Hvis åbent, så luk
+                content.style.maxHeight = null;
             } else {
-                // Hvis det er lukket, så åben det
-                currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+                // Hvis lukket, fold ud ud fra tekstens højde
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         });
     });
@@ -85,6 +78,7 @@ const nyhederForside = [
         titel: "Silent Disco på Alive Festival 2025",
         indhold: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne - nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar.",
         farve: "var(--alivegrøn)",
+        id: "silentDisco"
     },
     {
         billede: "./assets/img/billetter-nyheder.webp",
@@ -92,6 +86,7 @@ const nyhederForside = [
         titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
         indhold: "Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
         farve: "var(--pink)",
+        id: "billetter"
     },
     {
         billede: "./assets/img/nye-musiknavne-nyhed.webp",
@@ -99,6 +94,7 @@ const nyhederForside = [
         titel: "Fem nye musiknavne til festivalplakaten",
         indhold: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem - og resten af programmet med kunst, musik og udflugter - under 'Program'.",
         farve: "var(--gul)",
+        id: "nyeNavne"
     }
 ]
 
@@ -113,7 +109,9 @@ if (nyhedForside) {
         card.style.backgroundColor = nyhed.farve;
 
         card.innerHTML =
-            `<img src="${nyhed.billede}" alt="${nyhed.titel} image">
+            `
+            <a href="./nyheder.html#${nyhed.id}">
+            <img src="${nyhed.billede}" alt="${nyhed.titel} image">
             <p>${nyhed.dato}</p>
             <h2>${nyhed.titel}</h2>
             <p>${nyhed.indhold}</p>
@@ -233,6 +231,15 @@ const madogDrikke = [
     }
 ]
 
+const gemtMad = localStorage.getItem('madogDrikke');
+if (gemtMad) {
+    const gemteMad = JSON.parse(gemtMad);
+    madogDrikke.forEach(m => {
+        const match = gemteMad.find(g => g.navn === m.navn);
+        if (match) m.favorit = match.favorit;
+    });
+}
+
 //Fanger .spisesteder-wrap i HTML'en
 const spisestederEl = document.querySelector('.spisesteder-wrap');
 
@@ -246,7 +253,7 @@ if (spisestederEl) {
         card.innerHTML = `
         <img src="${madbod.billede}" alt="billede af ${madbod.navn}">
         <h2>${madbod.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${madbod.navn}"></i>
+        <i class="${madbod.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${madbod.navn}"></i>
         `;
 
         // Føj til favoritter
@@ -256,7 +263,7 @@ if (spisestederEl) {
 
             const spisestedObj = madogDrikke.find(m => m.navn === e.target.dataset.navn);
             spisestedObj.favorit = !spisestedObj.favorit;
-            localStorage.setItem('madogDrikke', JSON.stringify(madogDrikke));
+
         });
 
         spisestederEl.appendChild(card);
@@ -303,6 +310,15 @@ const barer = [
     }
 ]
 
+
+const gemtBarer = localStorage.getItem('barer');
+if (gemtBarer) {
+    const gemteBarer = JSON.parse(gemtBarer);
+    barer.forEach(b => {
+        const match = gemteBarer.find(g => g.navn === b.navn);
+        if (match) b.favorit = match.favorit;
+    });
+}
 const barerEl = document.querySelector('.barer-wrap');
 
 if (barerEl) {
@@ -315,7 +331,7 @@ if (barerEl) {
         card.innerHTML = `
         <img src="${bar.billede}" alt="${bar.navn}">
         <h2>${bar.navn}</h2>
-        <i class="fa-regular fa-heart" data-navn="${bar.navn}"></i>
+       <i class="${bar.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${bar.navn}"></i>
         `
 
         card.querySelector('i').addEventListener('click', (e) => {
@@ -324,7 +340,6 @@ if (barerEl) {
 
             const barObj = barer.find(b => b.navn === e.target.dataset.navn);
             barObj.favorit = !barObj.favorit;
-            localStorage.setItem('barer', JSON.stringify(barer));
 
         });
 
@@ -344,7 +359,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ORA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
 
     },
     {
@@ -354,7 +370,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "UDENORD.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Fællessang",
@@ -363,7 +380,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "FAELLESSANG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Elias Rønnenfeldt",
@@ -372,7 +390,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ELIAS.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Enes",
@@ -381,7 +400,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "ENES.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Brimheim",
@@ -390,7 +410,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "BRIMHEIM.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Faza",
@@ -399,7 +420,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "FAZA.webp",
-        favorit: false
+        favorit: false,
+        link: "kunstner.html"
     },
     {
         navn: "Emma Sehested Høeg",
@@ -408,7 +430,8 @@ const kunstnere = [
         dag: "torsdag",
         kategori: "musik",
         billede: "EMMASEHESTEDHØEG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     //   fredag
@@ -419,7 +442,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "KAROLINE.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Bette",
@@ -428,7 +452,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "BETTE.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Østen",
@@ -437,7 +462,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "OESTEN.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Baest",
@@ -446,7 +472,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "BAEST.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Dayyani",
@@ -455,7 +482,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "DAYYANI.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "School of X",
@@ -464,7 +492,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "SCHOOLOFX.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Paydar",
@@ -473,7 +502,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "musik",
         billede: "PAYDAR.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     // Lørdag
@@ -484,7 +514,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "LEA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Tamara Mneney",
@@ -493,7 +524,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "TAMRARAMNENEY.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Mekdes",
@@ -502,7 +534,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "MEKDES.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Von Quar",
@@ -511,7 +544,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "VONQUAR.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Def Mama Def",
@@ -520,7 +554,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "DEFMAMADEF.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "100% WET",
@@ -529,7 +564,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "100WET.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Kind mod kind",
@@ -538,7 +574,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "KINDMODKIND.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Tacobitch",
@@ -547,7 +584,8 @@ const kunstnere = [
         dag: "lørdag",
         kategori: "musik",
         billede: "TACOBITCH.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 
     //   Kunst
@@ -558,7 +596,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "BJOERG.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Traad for traad",
@@ -567,16 +606,18 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "TRAADFORTRAAD.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Werk",
         scene: "",
         tid: "16:00",
         dag: "fredag",
-        kategori: "kusnt",
+        kategori: "kunst",
         billede: "WERK.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Solvej Mia",
@@ -585,7 +626,17 @@ const kunstnere = [
         dag: "fredag",
         kategori: "kunst",
         billede: "SOLVEJMIA.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
+    }, {
+        navn: "UngKunstThy",
+        scene: "",
+        tid: "18:30",
+        dag: "lørdag",
+        kategori: "kunst",
+        billede: "UNGKUNSTTHY.webp",
+        favorit: false,
+        link: "program.html"
     },
 
     // udflugter
@@ -596,7 +647,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "THISTEDBRYGHUS.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Morgendyb i Limfjorden",
@@ -605,7 +657,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "morgendyp_favorit.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Thy whiskey på Gyrup gård",
@@ -614,7 +667,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "THYWHISKY.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "'Kærestebreve fra thy' i Agger bio",
@@ -623,7 +677,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "AGGERBIO.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Surfskole",
@@ -632,7 +687,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: "surfskole.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Det nordatlantiske fyr i Hanstholm",
@@ -641,7 +697,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "udflugter",
         billede: ".webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     //   Andet
     {
@@ -651,7 +708,8 @@ const kunstnere = [
         dag: "fredag",
         kategori: "andet",
         billede: "SEXOGSAMFUND.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
     {
         navn: "Silent disco",
@@ -660,9 +718,20 @@ const kunstnere = [
         dag: "fredag",
         kategori: "andet",
         billede: "SILENTDISCO.webp",
-        favorit: false
+        favorit: false,
+        link: "program.html"
     },
 ]
+
+// Hent gemt favorit-status fra localStorage
+const gemt = localStorage.getItem('kunstnere');
+if (gemt) {
+    const gemteKunstnere = JSON.parse(gemt);
+    kunstnere.forEach(k => {
+        const match = gemteKunstnere.find(g => g.navn === k.navn);
+        if (match) k.favorit = match.favorit;
+    });
+}
 
 // fang .programmer i HTML
 const programEl = document.querySelector('.programmer');
@@ -677,15 +746,21 @@ if (programEl) {
         // Giv div'en klassen "program"
         card.classList.add('program');
 
+        // let link = "./kunstner.html";
+        // if (kunstner.kategori === "kunst") link = "./kunst.html";
+        // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+        // else if (kunstner.kategori === "andet") link = "./andet.html";
+
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
+        <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart" data-navn="${kunstner.navn}"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
     `;
 
         // favorit knap
@@ -713,6 +788,7 @@ const kategoriLabels = {
     udflugter: "Udflugter",
     kunst: "Kunst",
     andet: "Andet",
+    madogdrik: "Spisesteder og barer"
 };
 
 let valgt = "alle";
@@ -744,7 +820,7 @@ document.querySelectorAll(".menuItem").forEach((item) => {
 
         // Opdater tekst og farve på knappen, ved at skifte klassen
         valgtLabel.textContent = kategoriLabels[valgt];
-        knap.classList.remove("alle", "musik", "udflugter", "kunst", "andet");
+        knap.classList.remove("alle", "musik", "udflugter", "kunst", "andet", "madogdrik");
         knap.classList.add(valgt);
 
         // Luk menu
@@ -756,19 +832,26 @@ document.querySelectorAll(".menuItem").forEach((item) => {
             ? kunstnere
             : kunstnere.filter(k => k.kategori === valgt);
 
-        // Ryd listen og vis de filtrerede kunstnere
+        // Ryd listen og vis de filtrerede kunstnere, spisesteder og barer
         programEl.innerHTML = '';
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            // let link = "./kunstner.html";
+            // if (kunstner.kategori === "kunst") link = "./kunst.html";
+            // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            // else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
+    <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
       </div>
-      <i class="fa-regular fa-heart"></i>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i></a>
             `;
             programEl.appendChild(card);
         });
@@ -802,14 +885,21 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            // let link = "./kunstner.html";
+            // if (kunstner.kategori === "kunst") link = "./kunst.html";
+            // else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            // else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
+     <a href="./${kunstner.link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
       <p>${kunstner.scene}</p>
       <p>${kunstner.tid}</p>
-      </div>
-      <i class="fa-regular fa-heart"></i>
+      </div></a>
+      <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}"></i>
             `;
             programEl.appendChild(card);
         });
@@ -835,31 +925,152 @@ if (favoritEl) {
                 <h2>${kunstner.navn}</h2>
                 <p>${kunstner.scene}</p>
                 <p>${kunstner.tid}</p>
-            </div>
-            <i class="fa-solid fa-heart data-navn="${kunstner.navn}"></i>
+            </div></a>
+            <i class="${kunstner.favorit ? 'fa-solid' : 'fa-regular'} fa-heart" data-navn="${kunstner.navn}">
         `;
         favoritEl.appendChild(card);
     });
 }
 
+// Favoritter - spisesteder
+const favoritMadEl = document.querySelector('.favoritter');
+
+if (favoritMadEl) {
+    const gemtMad = localStorage.getItem('madogDrikke');
+    const madogDrikke = JSON.parse(gemtMad);
+
+    if (madogDrikke) {
+        const favoritMad = madogDrikke.filter(m => m.favorit === true);
+
+        favoritMad.forEach(mad => {
+            const card = document.createElement('div');
+            card.classList.add('spisested');
+            card.innerHTML = `
+                <img src="${mad.billede}" alt="${mad.navn}">
+                <h2>${mad.navn}</h2>
+                <i class="fa-solid fa-heart" data-navn="${mad.navn}"></i>
+            `;
+            favoritMadEl.appendChild(card);
+        });
+    }
+
+    // Favoritter - barer
+    const gemtBarer = localStorage.getItem('barer-wrap');
+    const barer = JSON.parse(gemtBarer);
+
+    if (barer) {
+        const favoritBarer = barer.filter(b => b.favorit === true);
+
+        favoritBarer.forEach(bar => {
+            const card = document.createElement('div');
+            card.classList.add('baren');
+            card.innerHTML = `
+                <img src="${bar.billede}" alt="${bar.navn}">
+                <h2>${bar.navn}</h2>
+                <i class="fa-solid fa-heart" data-navn="${bar.navn}"></i>
+            `;
+            favoritMadEl.appendChild(card);
+        });
+    }
+}
+
+
+
 // BILLETTER
 
-document.querySelector('.festivalBtn').addEventListener('click', () => {
-    document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
-});
+const festivalBtn = document.querySelector('.festivalBtn');
+if (festivalBtn) {
+    festivalBtn.addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.campingBtn').addEventListener('click', () => {
-    document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
-});
 
-document.querySelector('.udstyrBtn').addEventListener('click', () => {
-    document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.festivalBtn').addEventListener('click', () => {
+        document.querySelector('#festival').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.transportBtn').addEventListener('click', () => {
-    document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.campingBtn').addEventListener('click', () => {
+        document.querySelector('#camping').scrollIntoView({ behavior: 'smooth' });
+    });
 
-document.querySelector('.udflugterBtn').addEventListener('click', () => {
-    document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
-});
+    document.querySelector('.udstyrBtn').addEventListener('click', () => {
+        document.querySelector('#udstyr').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.transportBtn').addEventListener('click', () => {
+        document.querySelector('#transport').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.udflugterBtn').addEventListener('click', () => {
+        document.querySelector('#udflugter').scrollIntoView({ behavior: 'smooth' });
+    });
+}
+
+
+// NYHEDER
+
+const nyheder = [
+    {
+        img: "BILLETSVINDEL.webp",
+        dato: "23. Juli 2025",
+        overskrift: "Pas på falske billetter – køb altid gennem officielle kanaler",
+        tekst: "Vi har desværre modtaget henvendelser om personer, der er blevet snydt i forbindelse med billetkøb til Alive Festival 2025. Det er vi rigtig ærgerlige over, og vi vil derfor gøre opmærksom på, at der i øjeblikket florerer svindel med videresalg af billetter. Vi kan desværre ikke hjælpe, hvis du har købt billet via andre kanaler ",
+        id: "billetSvindel"
+    }, {
+        img: "OPBYGNING.webp",
+        dato: "23. Juli 2025",
+        overskrift: "Opbygningen er i fuld gang!",
+        tekst: "Vores frivillige knokler med lynets hast for at forvandle Christianshave til Alive Festival 2025. Der bliver bygget, hygget og flyttet i bedste Alive-ånd – i morgen går det løs, og vi glæder os helt vildt! Det er sidste chance for at købe partoutbillet og få den fulde festivaloplevelse.",
+        id: "opbygning"
+    }, {
+        img: "silent_disco_forside.webp",
+        dato: "15. Juli 2025",
+        overskrift: "Silent Disco på Alive Festival 2025",
+        tekst: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne – nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar til at danse hele natten lang.",
+        id: "silentDisco"
+    }, {
+        img: "billetter-nyheder.webp",
+        dato: "5. Juni 2025",
+        overskrift: "Få partoutbilletter tilbage til Alive Festival 2025!",
+        tekst: "Vi har store og glædelige nyheder: Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til ",
+        id: "billetter"
+    }, {
+        img: "KIRKEKONCERTER.webp",
+        dato: "30. maj 2025",
+        overskrift: "Alive Festival løfter sløret for årets kirkekoncerter",
+        tekst: "Alive Festival offentliggør tre navne til kirkekoncerterne på årets festival. Kirkekoncerterne er et unikt format, hvor gæsterne får mulighed for særlige musikalske oplevelser i rammer, der indbyder til ro og eftertænksomhed. Formatet blev introduceret i 2022 og har siden udviklet sig til en central del af Alive-programmet. ",
+        id: "Kirkekoncert"
+    }, {
+        img: "nye-musiknavne-nyhed.webp",
+        dato: "14. marts 2025",
+        overskrift: "Fem nye musiknavne til festivalplakaten!",
+        tekst: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem – og resten af programmet med kunst, musik og udflugter – under ‘Program’.",
+        id: "nyeNavne"
+    }, {
+        img: "FRIVILLIGTILMEDLING.webp",
+        dato: "3. marts 2025",
+        overskrift: "Frivilligtilmeldingen er åben",
+        tekst: "Der er mange måder at opleve Alive Festival på. En af dem er at være en del af det fantastiske frivillighold omkring festivalen. Hop ind og læs mere om, hvordan du bliver frivillig til årets festival på siden ‘Bliv frivillig’.",
+        id: "frivillige"
+    }
+]
+
+// fang .alleNyheder i HTML
+const nyhedsEl = document.querySelector('.alleNyheder');
+
+if (nyhedsEl) {
+    nyhedsEl.innerHTML = '';
+    // Løb igennem hvert nyheds-objekt i arrayet
+    nyheder.forEach(nyhed => {
+        const card = document.createElement('div');
+        card.classList.add('nyhed');
+        card.id = nyhed.id;
+        card.innerHTML = `
+            <img src="./assets/img/${nyhed.img}">
+            <p class="dato">${nyhed.dato}</p>
+            <h2>${nyhed.overskrift}</h2>
+                <p class="tekst">${nyhed.tekst}</p>
+    `;
+        nyhedsEl.appendChild(card);
+    })
+}
