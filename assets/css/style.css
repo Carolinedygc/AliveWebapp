@@ -328,6 +328,11 @@ footer {
     height: 640px;
 }
 
+.nyhed-forside a {
+    text-decoration: none;
+    color: var(--brun);
+}
+
 
 .nyhed-forside img {
     width: 100%;
