@@ -78,6 +78,7 @@ const nyhederForside = [
         titel: "Silent Disco på Alive Festival 2025",
         indhold: "Glæd dig til en helt særlig Silent Disco-oplevelse, når vi inviterer til natlige dansegulve under stjernerne - nu med live DJs hver aften og dobbelt så mange headsets som sidste år! Når du har sikret dig billet, henter du dit headset i Silent Disco-boden, og så er du klar.",
         farve: "var(--alivegrøn)",
+        id: "silentDisco"
     },
     {
         billede: "./assets/img/billetter-nyheder.webp",
@@ -85,6 +86,7 @@ const nyhederForside = [
         titel: "Få partoutbilletter tilbage til Alive Festival 2025!",
         indhold: "Der er nu kun få partoutbilletter tilbage til Alive Festival 2025! Vil du sikre dig adgang til alle tre dage med musik, kunst og udflugter i Thy, så er det nu, du skal slå til. Har du kun tid til én dag? Så kan du også købe endagsbillet til torsdag, fredag eller lørdag.",
         farve: "var(--pink)",
+        id: "billetter"
     },
     {
         billede: "./assets/img/nye-musiknavne-nyhed.webp",
@@ -92,6 +94,7 @@ const nyhederForside = [
         titel: "Fem nye musiknavne til festivalplakaten",
         indhold: "Fem gode fredagsnyheder! Vi glæder os til at byde velkommen til School of X, Def MaMa Def, Faza, Uden Ord og 100%WET på årets festival. Læs mere om dem - og resten af programmet med kunst, musik og udflugter - under 'Program'.",
         farve: "var(--gul)",
+        id: "nyeNavne"
     }
 ]
 
@@ -106,7 +109,9 @@ if (nyhedForside) {
         card.style.backgroundColor = nyhed.farve;
 
         card.innerHTML =
-            `<img src="${nyhed.billede}" alt="${nyhed.titel} image">
+            `
+            <a href="./nyheder.html#${nyhed.id}">
+            <img src="${nyhed.billede}" alt="${nyhed.titel} image">
             <p>${nyhed.dato}</p>
             <h2>${nyhed.titel}</h2>
             <p>${nyhed.indhold}</p>
