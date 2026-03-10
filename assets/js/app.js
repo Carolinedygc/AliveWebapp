@@ -584,7 +584,7 @@ const kunstnere = [
         scene: "",
         tid: "16:00",
         dag: "fredag",
-        kategori: "kusnt",
+        kategori: "kunst",
         billede: "WERK.webp",
         favorit: false
     },
@@ -697,9 +697,14 @@ if (programEl) {
         // Giv div'en klassen "program"
         card.classList.add('program');
 
+        let link = "./kunstner.html";
+        if (kunstner.kategori === "kunst") link = "./kunst.html";
+        else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+        else if (kunstner.kategori === "andet") link = "./andet.html";
+
         // Put navn, scene, tid og hjerte-ikon ind i div'en
         card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -783,8 +788,14 @@ document.querySelectorAll(".menuItem").forEach((item) => {
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            let link = "./kunstner.html";
+            if (kunstner.kategori === "kunst") link = "./kunst.html";
+            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
@@ -825,8 +836,14 @@ document.querySelectorAll(".dag").forEach((dagKnap) => {
         filtreret.forEach(kunstner => {
             const card = document.createElement('div');
             card.classList.add('program');
+
+            let link = "./kunstner.html";
+            if (kunstner.kategori === "kunst") link = "./kunst.html";
+            else if (kunstner.kategori === "udflugter") link = "./udflugt.html";
+            else if (kunstner.kategori === "andet") link = "./andet.html";
+
             card.innerHTML = `
-        <a href="./kunstner.html">
+        <a href="${link}">
      <img src="./assets/img/${kunstner.billede}" alt="billede af ${kunstner.navn}">
       <div class="kunstnerText">
       <h2>${kunstner.navn}</h2>
