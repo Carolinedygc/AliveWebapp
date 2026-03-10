@@ -188,6 +188,7 @@ footer {
     position: sticky;
     padding-bottom: 2rem;
     bottom: 0;
+    z-index: 12;
 
     a {
         text-decoration: none;
@@ -229,7 +230,7 @@ footer {
         position: relative;
         object-position: top;
         margin-top: -170px;
-        z-index: 10;
+        z-index: 12;
 
     }
 }
@@ -1297,4 +1298,283 @@ a.valgtSide {
 .infoRow .value {
     color: var(--brun);
     text-align: right;
+}
+
+
+
+
+
+/* TIDSPLAN */
+.program-grid {
+    display: grid;
+
+    /* første kolonne - kategorier */
+    grid-template-columns: 150px repeat(20, 140px);
+    /* første række - tidspunkter */
+    grid-template-rows: 60px repeat(10, 60px);
+    min-width: 2950px;
+    border: 1px solid #ccc;
+}
+
+/* tider */
+.time {
+    grid-row: 1;
+
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*   border: 1px solid #ddd; */
+}
+
+/* kategorier */
+.scene {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    position: sticky;
+    left: 0;
+}
+
+/* placering af kategorier */
+
+.musik {
+    grid-column: 1 / 12;
+    grid-row: 2 / 5;
+    background: var(--pink);
+    border-bottom: 2px solid var(--brun);
+}
+
+.kunst {
+    grid-column: 1 / 12;
+    grid-row: 5 / 10;
+    background: var(--gul);
+    border-bottom: 2px solid var(--brun);
+}
+
+.udflugt {
+    grid-column: 1 / 12;
+    grid-row: 10 / 12;
+    background: var(--alivegrøn);
+    border-bottom: 2px solid var(--brun);
+}
+
+.a-andet {
+    grid-column: 1 / 12;
+    grid-row: 12 / 14;
+    background: var(--lysbrun);
+}
+
+/* events */
+
+.event {
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 6px;
+}
+
+
+.udenOrd-event {
+    background: #2f6f2f;
+}
+
+.elias-event {
+    background: #2d57a8;
+
+}
+
+
+
+
+.ora {
+    grid-column: 3 / 7;
+    grid-row: 2;
+    background-image: url("../img/ORA.webp");
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+    /*    background: #b83333; */
+}
+
+
+.udenord {
+    background-image: url("../img/UDENORD.webp");
+    grid-column: 5 / 9;
+    grid-row: 3;
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+    color: var(--brun);
+}
+
+.elias {
+    background-image: url("../img/ELIAS.webp");
+    grid-column: 4 / 11;
+    grid-row: 4;
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+}
+
+.bjorg {
+    background-image: url("../img/BJOERG.webp");
+    grid-column: 2 / -1;
+    grid-row: 5;
+    z-index: 9;
+    opacity: 80%;
+    border: 1px solid var(--brun);
+    color: var(--brun);
+}
+
+.traad {
+    background-image: url("../img/TRAADFORTRAAD.webp");
+    grid-column: 2 / -1;
+    grid-row: 6;
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+}
+
+.werk {
+    background-image: url("../img/WERK.webp");
+    grid-column: 4 / 8;
+    grid-row: 7;
+    z-index: 9;
+    opacity: 50%;
+    border: 1px solid var(--brun);
+}
+
+.solvej {
+    background-image: url("../img/SOLVEJMIA.webp");
+    grid-column: 2 / -1;
+    grid-row: 8;
+    z-index: 9;
+    opacity: 80%;
+    border: 1px solid var(--brun);
+    color: var(--brun);
+}
+
+.yuki {
+    background-image: url("../img/YUKIRAVNLIEP.webp");
+    grid-column: 3 / 7;
+    grid-row: 9;
+    z-index: 9;
+    opacity: 50%;
+    border: 1px solid var(--brun);
+}
+
+.bryghus {
+    background-image: url("../img/THISTEDBRYGHUS.webp");
+    grid-column: 4 / 7;
+    grid-row: 10;
+    z-index: 9;
+    opacity: 50%;
+    border: 1px solid var(--brun);
+}
+
+.limfjord {
+    background-image: url("../img/morgendyp_favorit.webp");
+    grid-column: 2 / 7;
+    grid-row: 11;
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+    color: var(--brun);
+
+}
+
+.sexsamf {
+    background-image: url("../img/SEXOGSAMFUND.webp");
+    grid-column: 4 / 7;
+    grid-row: 12;
+    z-index: 9;
+    opacity: 70%;
+    border: 1px solid var(--brun);
+    color: var(--brun);
+}
+
+.lokationEt {
+    grid-column: 2;
+    grid-row: 2;
+    z-index: 1;
+
+    padding-left: 0.5rem;
+
+    /*     padding-top: 1rem; */
+    /*     border-left: 3px solid black; */
+    /*     border-top: 1px solid black; */
+    /*     border-bottom: 2px solid black; */
+    /*  position: fixed;
+    left: 160px;
+    top: 250px; */
+}
+
+.lokationTo {
+    grid-column: 2;
+    grid-row: 3;
+    z-index: 1;
+
+    border-top: 2px solid var(--brun);
+    border-bottom: 2px solid var(--brun);
+    /*     border-left: 3px solid black; */
+    padding-left: 0.5rem;
+    /*  position: fixed;
+    left: 160px;
+    top: 300px; */
+}
+
+.lokationTre {
+    grid-column: 2;
+    grid-row: 4;
+    z-index: 1;
+
+    padding-left: 0.5rem;
+    /*     border-top: 1px solid black; */
+    /*     border-bottom: 2px solid black; */
+    /*     border-left: 3px solid black; */
+    /*     position: fixed;
+    left: 160px;
+    top: 350px; */
+}
+
+
+.musikKat {
+    grid-column: 1;
+    grid-row: 2/ 5;
+    border-right: 2px solid var(--brun);
+    border-bottom: 2px solid var(--brun);
+    background-color: var(--pink);
+    z-index: 10;
+}
+
+.kunstKat {
+    grid-column: 1;
+    grid-row: 5 / 10;
+    border-right: 2px solid var(--brun);
+    border-bottom: 2px solid var(--brun);
+    background-color: var(--gul);
+    z-index: 10;
+}
+
+.udflugtKat {
+    grid-column: 1;
+    grid-row: 10 / 12;
+    border-right: 2px solid var(--brun);
+    background-color: var(--alivegrøn);
+    border-bottom: 2px solid var(--brun);
+    z-index: 10;
+}
+
+.a-andetKat {
+    grid-column: 1;
+    grid-row: 12 / 14;
+    border-right: 2px solid var(--brun);
+    z-index: 10;
+    background-color: var(--lysbrun);
 }
